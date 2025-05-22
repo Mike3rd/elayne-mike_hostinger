@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Elayne-Mike.com</title>
+    <link>https://turkodell.com/tags/</link>
+    <description>Recent content in Tags on Elayne-Mike.com</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 06 Mar 2025 10:40:38 -0500</lastBuildDate>
+    <atom:link href="https://turkodell.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Graphic Design</title>
+      <link>https://turkodell.com/tags/graphic-design/</link>
+      <pubDate>Thu, 06 Mar 2025 10:40:38 -0500</pubDate>
+      <guid>https://turkodell.com/tags/graphic-design/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Triathlon</title>
+      <link>https://turkodell.com/tags/triathlon/</link>
+      <pubDate>Thu, 06 Feb 2025 20:02:08 -0500</pubDate>
+      <guid>https://turkodell.com/tags/triathlon/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Example</title>
+      <link>https://turkodell.com/tags/example/</link>
+      <pubDate>Mon, 20 Mar 2017 00:00:00 +0000</pubDate>
+      <guid>https://turkodell.com/tags/example/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Photoswipe</title>
+      <link>https://turkodell.com/tags/photoswipe/</link>
+      <pubDate>Mon, 20 Mar 2017 00:00:00 +0000</pubDate>
+      <guid>https://turkodell.com/tags/photoswipe/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
