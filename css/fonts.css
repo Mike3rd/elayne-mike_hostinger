@@ -4,19 +4,21 @@
 ================================================================================ */
 @font-face {
     font-family: 'instrument_serifregular';
-    src: url('instrumentserif-regular-webfont.woff2') format('woff2'),
-         url('instrumentserif-regular-webfont.woff') format('woff');
+    src: url('/instrumentserif-regular-webfont.woff2') format('woff2'),
+         url('/instrumentserif-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
 }
 
 @font-face {
-    font-family: 'Barriecito-Regular';
-    src: url('Barriecito-Regular.ttf') format('truetype'),
-       
+    font-family: 'emilys_candyregular';
+    src: url('/fonts/emilyscandy/emilyscandy-regular-webfont.woff2') format('woff2'),
+		 url('/fonts/emilyscandy/EmilysCandy-Regular') format('truetype'),
+         url('/fonts/emilyscandy/emilyscandy-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+	font-display: swap;
 
 }
 
@@ -29,7 +31,9 @@
 ================================================================================ */
 @font-face {
   font-family: 'merriweather';
-  src: url('fonts/merriweather/merriweather-bold-webfont.woff2') format('woff2'), url('fonts/merriweather/merriweather-bold-webfont.ttf') format('truetype'), url('fonts/merriweather/merriweather-bold-webfont.svg#merriweatherbold') format('svg');
+  src:	url('/fonts/merriweather/merriweather-bold-webfont.woff2') format('woff2'),
+		url('/fonts/merriweather/merriweather-bold-webfont.ttf') format('truetype'),
+		url('/fonts/merriweather/merriweather-bold-webfont.svg#merriweatherbold') format('svg');
   font-weight: bold;
   font-style: normal;
   font-display: swap;
