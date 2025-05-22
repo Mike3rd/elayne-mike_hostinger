@@ -4,7 +4,7 @@ define('db_host','localhost');
 // Your MySQL database username.
 define('db_user','u940803011_em2025');
 // Your MySQL database password.
-define('db_pass','em2025');
+define('db_pass','elaynemike25');
 // Your MySQL database name.
 define('db_name','u940803011_elayne_mike');
 // Your MySQL database charset.
