@@ -56,7 +56,9 @@
 	--xbold 	 :800;
 	--checkout-text-font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Helvetica Neue","Ubuntu",sans-serif;
 	--theme-font-family:'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	--theme-title-family:"Barriecito", system-ui;
+	/*--theme-title-family:"Barriecito", system-ui;*/
+	--theme-second-family:"Emilys Candy",serif;
+	--theme-title-family:"Emilys Candy", system-ui;
 } 
  
 :root[data-theme="default"]{
@@ -211,8 +213,8 @@ border-color: var(--secondary)
 .navbar-brand{
 	color: var(--primary);
 	font-weight:500!important;
-	font-size:20px!important;
-	/*font-family: var(--theme-title-family)*/
+	font-size:30px!important;
+	font-family: var(--theme-second-family)
 
 	}
 	
@@ -242,7 +244,10 @@ color: var(--color-gray-10)
 }
 
 
-
+.well img  {
+	
+border-radius: 10px;
+}
 
 
 .post-preview, .blog-post{
