@@ -4,7 +4,7 @@ class Comments {
         let defaults = {
             page_id: 1,
             container: document.querySelector('.comments'),
-            php_file_url: '/phpcomments/comments.php'
+            php_file_url: 'comments.php'
         };
         this.options = Object.assign(defaults, options);
         this.fetchComments();
