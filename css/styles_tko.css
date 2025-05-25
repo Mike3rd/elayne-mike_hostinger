@@ -149,6 +149,7 @@ body{
 	background-image: linear-gradient(to bottom right, #EFFDFA, white);
 	background-size: cover;
 	height:100% ;
+	font-family: var(--theme-font-family)
 }
 /*
 .intro-header, .no-image{
@@ -159,6 +160,18 @@ body{
 	background-image: linear-gradient(to bottom right, #CAF5EE, white);
 	
 }*/
+
+
+.intro-header .post-heading h1 {
+font-family: var(--theme-second-family)	;
+font-size: 80px
+	
+}
+
+.post-preview h2{
+font-family: var(--theme-title-family);
+font-size: 45px!important;		
+}
 
 
 .panel-title {
@@ -185,7 +198,9 @@ a:hover {
 }
 
 
+.list-group p{
 
+}
 
 
 
@@ -232,12 +247,13 @@ border-color: var(--secondary)
 	font-family: var(--theme-font-family);
 	color:var(--text-well);
 	border-radius: 15px;
-	border: none!important
-	
-		
+	border: none!important		
 }
 
-
+.well h1 {
+font-family: var(--theme-second-family);
+font-size: 50px;		
+}
 
 .well a{
 color: var(--color-gray-10)

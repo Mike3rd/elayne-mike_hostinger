@@ -6,42 +6,42 @@
     <description>Recent content in Pages on Elayne-Mike.com</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 20 Mar 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 20 Mar 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://elayne-mike.com/page/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Photo Gallery</title>
+      <link>https://elayne-mike.com/page/photos/</link>
+      <pubDate>Thu, 20 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://elayne-mike.com/page/photos/</guid>
+      <description>&lt;h2 id=&#34;here-youll-find-a-collection-of-our-favorite-moments-&#34;&gt;Here you&amp;rsquo;ll find a collection of our favorite moments —&lt;/h2&gt;&#xA;&lt;p&gt;from adventures we&amp;rsquo;ve taken to memories we’ve made along the way. We&amp;rsquo;ll add selected photos to this page as we get closer to the big day, so check back often!&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Faqs</title>
       <link>https://elayne-mike.com/page/faqs/</link>
       <pubDate>Mon, 20 Mar 2017 00:00:00 +0000</pubDate>
       <guid>https://elayne-mike.com/page/faqs/</guid>
-      <description>&lt;div class=&#34;panel-group&#34; id=&#34;accordion&#34;&gt;&#xA;&#x9;  &#xA;        &lt;!--Question 1--&gt;&#xA;          &lt;div class=&#34;panel panel-default&#34;&gt;&#xA;            &lt;a class=&#34;collapsed&#34; role=&#34;button&#34; data-toggle=&#34;collapse&#34; data-target=&#34;#collapsequestion1&#34; data-parent=&#34;#accordion&#34; aria-expanded=&#34;false&#34;&gt;&#xA;                &lt;div class=&#34;panel-heading&#34; id=&#34;headerexample&#34;&gt;&#xA;                  &lt;h4 class=&#34;panel-title&#34;&gt;&#xA;                      Nearby hotels&#xA;                  &lt;/h4&gt;&#xA;                &lt;/div&gt;&#xA;            &lt;/a&gt;&#xA;            &lt;div id=&#34;collapsequestion1&#34; class=&#34;panel-collapse collapse&#34; aria-expanded=&#34;false&#34; style=&#34;height: 0px;&#34;&gt;&#xA;              &lt;div class=&#34;panel-body&#34;&gt;&#xA;                &lt;div class=&#34;list-group&#34;&gt;&#xA;                   &lt;a href=&#34;www.test.com&#34;&gt;Ramada Inn&lt;/a&gt;&#xA;                &lt;/div&gt;&#xA;              &lt;/div&gt;&#xA;            &lt;/div&gt;&#xA;          &lt;/div&gt;&#xA;&#x9;&#x9;  &#xA;&#x9;&#x9;  &lt;!--Question 2--&gt;&#xA;          &lt;div class=&#34;panel panel-default&#34;&gt;&#xA;            &lt;a class=&#34;collapsed&#34; role=&#34;button&#34; data-toggle=&#34;collapse&#34; data-target=&#34;#collapsequestion2&#34; data-parent=&#34;#accordion&#34; aria-expanded=&#34;false&#34;&gt;&#xA;                &lt;div class=&#34;panel-heading&#34; id=&#34;headerexample&#34;&gt;&#xA;                  &lt;h4 class=&#34;panel-title&#34;&gt;&#xA;                      Question 2&#xA;                  &lt;/h4&gt;&#xA;                &lt;/div&gt;&#xA;            &lt;/a&gt;&#xA;            &lt;div id=&#34;collapsequestion2&#34; class=&#34;panel-collapse collapse&#34; aria-expanded=&#34;false&#34; style=&#34;height: 0px;&#34;&gt;&#xA;              &lt;div class=&#34;panel-body&#34;&gt;&#xA;                &lt;div class=&#34;list-group&#34;&gt;&#xA;                   &lt;p&gt;Answer  2 For more detailed configurations and additional attributes, refer to the Hugo Bootstrap Module documentation.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Photos</title>
-      <link>https://elayne-mike.com/page/photos/</link>
-      <pubDate>Mon, 20 Mar 2017 00:00:00 +0000</pubDate>
-      <guid>https://elayne-mike.com/page/photos/</guid>
-      <description>&lt;p&gt;Beautiful Hugo adds a few custom shortcodes created by &lt;a href=&#34;https://www.liwen.id.au/heg/&#34;&gt;Li-Wen Yip&lt;/a&gt; and &lt;a href=&#34;https://github.com/GjjvdBurg/HugoPhotoSwipe&#34;&gt;Gert-Jan van den Berg&lt;/a&gt; for making galleries with &lt;a href=&#34;https://photoswipe.com&#34;&gt;PhotoSwipe&lt;/a&gt; .&lt;/p&gt;&#xA;&#xA;&#xA;&#xA;&lt;div class=&#34;gallery caption-position-bottom caption-effect-fade hover-effect-zoom hover-transition&#34; itemscope itemtype=&#34;http://schema.org/ImageGallery&#34;&gt;&#xA;&#x9;  &#xA;&#xA;&lt;link rel=&#34;stylesheet&#34; href=&#34;https://elayne-mike.com/css/hugo-easy-gallery.css&#34; /&gt;&#xA;&lt;div class=&#34;box&#34; &gt;&#xA;  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;&#xA;    &lt;div class=&#34;img&#34; style=&#34;background-image: url(&#39;https://elayne-mike.com/img/hexagon-thumb.jpg&#39;);&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;img/hexagon-thumb.jpg&#34; alt=&#34;Hexagon 1&#34;/&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;../img/hexagon.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;      &lt;figcaption&gt;&#xA;          &lt;p&gt;Hexagon 1&lt;/p&gt;&#xA;      &lt;/figcaption&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&#xA;&#xA;&lt;div class=&#34;box&#34; &gt;&#xA;  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;&#xA;    &lt;div class=&#34;img&#34; style=&#34;background-image: url(&#39;https://elayne-mike.com/img/sphere-thumb.jpg&#39;);&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;img/sphere-thumb.jpg&#34; alt=&#34;Sphere&#34;/&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;../img/sphere.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;      &lt;figcaption&gt;&#xA;          &lt;p&gt;Sphere&lt;/p&gt;&#xA;      &lt;/figcaption&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&#xA;&#xA;&lt;div class=&#34;box&#34; &gt;&#xA;  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;&#xA;    &lt;div class=&#34;img&#34; style=&#34;background-image: url(&#39;https://elayne-mike.com/img/triangle-thumb.jpg&#39;);&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;img/triangle-thumb.jpg&#34; alt=&#34;This is a long comment about a hexagon This is a long comment about a hexagon&#34;/&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;../img/triangle.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;      &lt;figcaption&gt;&#xA;          &lt;p&gt;Triangle&lt;/p&gt;&#xA;      &lt;/figcaption&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&#xA;&#xA;&lt;div class=&#34;box&#34; &gt;&#xA;  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;&#xA;    &lt;div class=&#34;img&#34; style=&#34;background-image: url(&#39;https://elayne-mike.com/img/hexagon-thumb.jpg&#39;);&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;img/hexagon-thumb.jpg&#34; alt=&#34;This is a long comment about a hexagon&#34;/&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;../img/hexagon.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;      &lt;figcaption&gt;&#xA;          &lt;p&gt;Hexagon&lt;/p&gt;&#xA;      &lt;/figcaption&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&#xA;&#xA;&lt;/div&gt;</description>
-    </item>
-    <item>
-      <title>Comments</title>
-      <link>https://elayne-mike.com/page/comments/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://elayne-mike.com/page/comments/</guid>
-      <description>&lt;div class=&#34;comments&#34;&gt;Comments&lt;/div&gt;&#xA;&#xA;&#x9;&#x9;&#x9;&lt;script src=&#34;../phpcomments/comments.js&#34;&gt;&lt;/script&gt;&#xA;&#x9;&#x9;&#x9;&lt;script&gt;&#xA;&#x9;&#x9;&#x9;new Comments({&#xA;&#x9;&#x9;&#x9;&#x9;page_id: 1,&#xA;&#x9;&#x9;&#x9;&#x9;comments_to_show: -1,&#xA;&#x9;&#x9;&#x9;});&#xA;&#x9;&#x9;&#x9;&lt;/script&gt;</description>
+      <description>&lt;div class=&#34;panel-group&#34; id=&#34;accordion&#34;&gt;&#xA;&#x9;  &#xA;        &lt;!--Question 1--&gt;&#xA;          &lt;div class=&#34;panel panel-default&#34;&gt;&#xA;            &lt;a class=&#34;collapsed&#34; role=&#34;button&#34; data-toggle=&#34;collapse&#34; data-target=&#34;#collapsequestion1&#34; data-parent=&#34;#accordion&#34; aria-expanded=&#34;false&#34;&gt;&#xA;                &lt;div class=&#34;panel-heading&#34; id=&#34;headerexample&#34;&gt;&#xA;                  &lt;h4 class=&#34;panel-title&#34;&gt;&#xA;                      Where is the wedding taking place?&#xA;                  &lt;/h4&gt;&#xA;                &lt;/div&gt;&#xA;            &lt;/a&gt;&#xA;            &lt;div id=&#34;collapsequestion1&#34; class=&#34;panel-collapse collapse&#34; aria-expanded=&#34;false&#34; style=&#34;height: 0px;&#34;&gt;&#xA;              &lt;div class=&#34;panel-body&#34;&gt;&#xA;                &lt;div class=&#34;list-group&#34;&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&lt;p&gt;Our ceremony and reception will both be held at &lt;a href=&#34;../page/venue&#34;&gt;The Loft at Sweetwater&lt;/a&gt;, located at 2554 Geryville Pike, Pennsburg, PA 18073.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Gifts</title>
       <link>https://elayne-mike.com/page/gifts/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://elayne-mike.com/page/gifts/</guid>
-      <description>&lt;p&gt;Gifts not necessary but if you&amp;rsquo;d like to contribute to our Honeymoon/Vacation/Race Fund. We will also are donating ??% to ??&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;were-just-so-excited-to-celebrate-with-you--thats-the-best-gift-we-could-ask-for&#34;&gt;We’re just so excited to celebrate with you — that’s the best gift we could ask for!&lt;/h2&gt;&#xA;&lt;p&gt;That said, if you’d like to contribute to our Honeymoon, Vacation, or Race Fund, we’d be incredibly grateful. We’re saving for some exciting adventures ahead and every little bit helps fuel the journey.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Song Request</title>
+      <title>Leave a Message</title>
+      <link>https://elayne-mike.com/page/comments/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://elayne-mike.com/page/comments/</guid>
+      <description>&lt;h2 id=&#34;wed-love-to-hear-from-you&#34;&gt;We’d love to hear from you!&lt;/h2&gt;&#xA;&lt;p&gt;We’ve set up this space for you to share a little something with us — and with everyone else! Scroll down to read what friends and family have written, or add your own message to the mix.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Song Requests</title>
       <link>https://elayne-mike.com/page/playlist/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://elayne-mike.com/page/playlist/</guid>
-      <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;were-putting-together-the-ultimate-playlist-for-our-wedding-reception--and-we-want-your-help&#34;&gt;We’re putting together the ultimate playlist for our wedding reception — and we want your help!&lt;/h2&gt;&#xA;&lt;p&gt;Got a song that makes you want to dance, sing, or just feel the love?&#xA;Send us 1 to 3 of your favorite tunes that you’d love to hear on the big night. If it fits the vibe, it might just make the cut!&lt;/p&gt;</description>
     </item>
     <item>
       <title>Venue</title>
