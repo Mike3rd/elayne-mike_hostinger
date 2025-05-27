@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo "<p>Invalid credentials. <a href='index.php'>Try again</a>.</p>";
     }
 } else {
-    header("Location: index.php");
+    header("Location: index.html");
     exit();
 }
 ?>
