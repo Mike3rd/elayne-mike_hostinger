@@ -2,59 +2,59 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Elayne-Mike.com</title>
-    <link>http://localhost:1313/</link>
+    <link>https://elayne-mike.com/</link>
     <description>Recent content on Elayne-Mike.com</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Thu, 20 Mar 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://elayne-mike.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Photo Gallery</title>
-      <link>http://localhost:1313/page/photos/</link>
+      <link>https://elayne-mike.com/page/photos/</link>
       <pubDate>Thu, 20 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/page/photos/</guid>
+      <guid>https://elayne-mike.com/page/photos/</guid>
       <description>&lt;h2 id=&#34;here-youll-find-a-collection-of-our-favorite-moments-&#34;&gt;Here you&amp;rsquo;ll find a collection of our favorite moments —&lt;/h2&gt;&#xA;&lt;p&gt;from adventures we&amp;rsquo;ve taken to memories we’ve made along the way. We&amp;rsquo;ll add selected photos to this page as we get closer to the big day, so check back often!&lt;/p&gt;</description>
     </item>
     <item>
       <title>Fun Facts about Mike &amp; Elayne</title>
-      <link>http://localhost:1313/post/2025/farewell-microsoft-publiser/</link>
+      <link>https://elayne-mike.com/post/2025/farewell-microsoft-publiser/</link>
       <pubDate>Thu, 06 Mar 2025 10:40:38 -0500</pubDate>
-      <guid>http://localhost:1313/post/2025/farewell-microsoft-publiser/</guid>
+      <guid>https://elayne-mike.com/post/2025/farewell-microsoft-publiser/</guid>
       <description>&lt;h3 id=&#34;nemo-enim-ipsam&#34;&gt;Nemo enim ipsam&lt;/h3&gt;&#xA;&lt;p&gt;Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur&lt;/p&gt;</description>
     </item>
     <item>
       <title>Faqs</title>
-      <link>http://localhost:1313/page/faqs/</link>
+      <link>https://elayne-mike.com/page/faqs/</link>
       <pubDate>Mon, 20 Mar 2017 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/page/faqs/</guid>
+      <guid>https://elayne-mike.com/page/faqs/</guid>
       <description>&lt;div class=&#34;panel-group&#34; id=&#34;accordion&#34;&gt;&#xA;&#x9;  &#xA;        &lt;!--Question 1--&gt;&#xA;          &lt;div class=&#34;panel panel-default&#34;&gt;&#xA;            &lt;a class=&#34;collapsed&#34; role=&#34;button&#34; data-toggle=&#34;collapse&#34; data-target=&#34;#collapsequestion1&#34; data-parent=&#34;#accordion&#34; aria-expanded=&#34;false&#34;&gt;&#xA;                &lt;div class=&#34;panel-heading&#34; id=&#34;headerexample&#34;&gt;&#xA;                  &lt;h4 class=&#34;panel-title&#34;&gt;&#xA;                      Where is the wedding taking place?&#xA;                  &lt;/h4&gt;&#xA;                &lt;/div&gt;&#xA;            &lt;/a&gt;&#xA;            &lt;div id=&#34;collapsequestion1&#34; class=&#34;panel-collapse collapse&#34; aria-expanded=&#34;false&#34; style=&#34;height: 0px;&#34;&gt;&#xA;              &lt;div class=&#34;panel-body&#34;&gt;&#xA;                &lt;div class=&#34;list-group&#34;&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&lt;p&gt;Our ceremony and reception will both be held at &lt;a href=&#34;./page/venue&#34;&gt;The Loft at Sweetwater&lt;/a&gt;, located at 2554 Geryville Pike, Pennsburg, PA 18073.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Gifts</title>
-      <link>http://localhost:1313/page/gifts/</link>
+      <link>https://elayne-mike.com/page/gifts/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/page/gifts/</guid>
+      <guid>https://elayne-mike.com/page/gifts/</guid>
       <description>&lt;h2 id=&#34;were-just-so-excited-to-celebrate-with-you--thats-the-best-gift-we-could-ask-for&#34;&gt;We’re just so excited to celebrate with you — that’s the best gift we could ask for!&lt;/h2&gt;&#xA;&lt;p&gt;That said, if you’d like to contribute to our Honeymoon, Vacation, or Race Fund, we’d be incredibly grateful. We’re saving for some exciting adventures ahead and every little bit helps fuel the journey.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Leave a Message</title>
-      <link>http://localhost:1313/page/comments/</link>
+      <link>https://elayne-mike.com/page/comments/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/page/comments/</guid>
+      <guid>https://elayne-mike.com/page/comments/</guid>
       <description>&lt;h2 id=&#34;wed-love-to-hear-from-you&#34;&gt;We’d love to hear from you!&lt;/h2&gt;&#xA;&lt;p&gt;We’ve set up this space for you to share a little something with us — and with everyone else! Scroll down to read what friends and family have written, or add your own message to the mix.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Song Requests</title>
-      <link>http://localhost:1313/page/playlist/</link>
+      <link>https://elayne-mike.com/page/playlist/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/page/playlist/</guid>
+      <guid>https://elayne-mike.com/page/playlist/</guid>
       <description>&lt;h2 id=&#34;were-putting-together-the-ultimate-playlist-for-our-wedding-reception--and-we-want-your-help&#34;&gt;We’re putting together the ultimate playlist for our wedding reception — and we want your help!&lt;/h2&gt;&#xA;&lt;p&gt;Got a song that makes you want to dance, sing, or just feel the love?&#xA;Send us 1 to 3 of your favorite tunes that you’d love to hear on the big night. If it fits the vibe, it might just make the cut!&lt;/p&gt;</description>
     </item>
     <item>
       <title>Venue</title>
-      <link>http://localhost:1313/page/venue/</link>
+      <link>https://elayne-mike.com/page/venue/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/page/venue/</guid>
+      <guid>https://elayne-mike.com/page/venue/</guid>
       <description>&lt;p&gt;&lt;img src=&#34;./img/loft.webp&#34; alt=&#34;The Loft at Sweet Water&#34; title=&#34;Turko Dell venue&#34;&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;address&#34;&gt;Address&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;The Loft at Sweet Water&lt;/strong&gt;&lt;br&gt;&#xA;2554 Geryville Pike&lt;br&gt;&#xA;Pennsburg, PA 18073&lt;/p&gt;</description>
     </item>
   </channel>
