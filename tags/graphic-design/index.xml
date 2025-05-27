@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Graphic Design on Elayne-Mike.com</title>
-    <link>https://elayne-mike.com/tags/graphic-design/</link>
+    <link>http://localhost:1313/tags/graphic-design/</link>
     <description>Recent content in Graphic Design on Elayne-Mike.com</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Thu, 06 Mar 2025 10:40:38 -0500</lastBuildDate>
-    <atom:link href="https://elayne-mike.com/tags/graphic-design/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/graphic-design/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Fun Facts about Mike &amp; Elayne</title>
-      <link>https://elayne-mike.com/post/2025/farewell-microsoft-publiser/</link>
+      <link>http://localhost:1313/post/2025/farewell-microsoft-publiser/</link>
       <pubDate>Thu, 06 Mar 2025 10:40:38 -0500</pubDate>
-      <guid>https://elayne-mike.com/post/2025/farewell-microsoft-publiser/</guid>
+      <guid>http://localhost:1313/post/2025/farewell-microsoft-publiser/</guid>
       <description>&lt;h3 id=&#34;nemo-enim-ipsam&#34;&gt;Nemo enim ipsam&lt;/h3&gt;&#xA;&lt;p&gt;Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur&lt;/p&gt;</description>
     </item>
   </channel>
