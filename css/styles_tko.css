@@ -273,6 +273,18 @@ margin-bottom:10px;
 border-radius: 15px	
 }
 
+.post-preview h2{
+text-align:center;
+}
+
+.post-preview .post-subtitle{
+text-align:center;
+}
+
+.post-preview img{
+border-radius: 15px	
+}
+
 .page-heading h1 {
 font-family: var(--theme-title-family);
 font-size:93px!important;
