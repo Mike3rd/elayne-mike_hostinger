@@ -265,6 +265,9 @@ color: var(--color-gray-10)
 border-radius: 10px;
 }
 
+	.em_heart{
+	width:50px; display: inline; padding-bottom:0px
+}
 
 .post-preview, .blog-post{
 background-image: linear-gradient(to bottom right, #D6F1F1, #ffffff);
@@ -287,7 +290,7 @@ border-radius: 15px
 
 .page-heading h1 {
 font-family: var(--theme-title-family);
-font-size:93px!important;
+font-size:80px!important;
 font-weight:normal;
 
 	
@@ -300,11 +303,17 @@ font-weight:normal;
 
 @media screen and (max-width: 600px) {
   .page-heading h1 {
-	font-size:80px!important;
+	font-size:50px!important;
 	line-height:100%;
 	margin-bottom:35px
 	}
 	
+	.well h1 {	
+	font-size:32px!important;
+	}
+	.em_heart{
+	width:50px; display: inline; padding-bottom:0px
+}
 
 }
 

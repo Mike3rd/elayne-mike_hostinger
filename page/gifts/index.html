@@ -65,7 +65,7 @@
   "headline": "Gifts",
   "description" : "We’re just so excited to celebrate with you — that’s the best gift we could ask for! That said, if you’d like to contribute to our Honeymoon, Vacation, or Race Fund, we’d be incredibly grateful. We’re saving for some exciting adventures ahead and every little bit helps fuel the journey.\n",
   "inLanguage" : "en",
-  "wordCount":  84 ,
+  "wordCount":  78 ,
   "datePublished" : "0001-01-01T00:00:00\u002b00:00",
   "dateModified" : "0001-01-01T00:00:00\u002b00:00",
   "image" : "https:\/\/elayne-mike.com\/",
@@ -290,7 +290,7 @@ function includeHTML() {
          
           data-img-src-1="/img/gifts.webp"
          
-         data-img-desc-1="Good Morning"
+         data-img-desc-1="Love is all we need. But cash is cool too."
       ></div>
   
 
@@ -315,7 +315,7 @@ function includeHTML() {
             </div>
           </div>
         </div>
-        <span class="img-desc" style="display: inline;">Good Morning</span>
+        <span class="img-desc" style="display: inline;">Love is all we need. But cash is cool too.</span>
       </div>
     
     
@@ -352,27 +352,58 @@ function includeHTML() {
       <article role="main" class="blog-post">
         <h2 id="were-just-so-excited-to-celebrate-with-you--thats-the-best-gift-we-could-ask-for">We’re just so excited to celebrate with you — that’s the best gift we could ask for!</h2>
 <p>That said, if you’d like to contribute to our Honeymoon, Vacation, or Race Fund, we’d be incredibly grateful. We’re saving for some exciting adventures ahead and every little bit helps fuel the journey.</p>
-<h4 id="heres-how-you-can-contribute">Here’s how you can contribute:</h4>
-<ul>
-<li><strong>In Person:</strong> Hand-deliver cash or a cheque at the wedding</li>
-<li><strong>Online:</strong> Send a contribution via PayPal or Venmo — contact us for our details!</li>
-</ul>
-<h4 id="no-pressure-no-expectations-">No pressure, no expectations 🩵</h4>
+<h3 id="heres-how-you-can-contribute">Here’s how you can contribute:</h3>
+<p><strong>In Person:</strong> Hand-deliver cash or a cheque at the wedding<br>
+<strong>Online:</strong> Send a contribution via Venmo
 
 
-<!-- Set up a container element for the button -->
-<div id="paypal-button-container"></div>
+<style>
+#donate_paypal_wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom:5px;
+  margin-top:5px
+}
 
-<!-- Include the PayPal JavaScript SDK. Replace `YOUR_CLIENT_ID` with your client ID.-->
-<!-- Note that `enable-funding=venmo` is added as a query parameter -->
-<script src="https://www.paypal.com/sdk/js?client-id=YOUR_CLIENT_ID&enable-funding=venmo"></script>
-
-<script>
-  // Render the Venmo button into #paypal-button-container
-  paypal.Buttons().render('#paypal-button-container')
-</script>
+#donate_paypal{
+  background-color:white;
+    padding:10px;
+  border-radius:5px;
+}
 
 
+
+ a.button_paypal:link,  a.button_paypal:visited {
+  background-color: var(--primary);
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  width:265px;
+  border-radius:5px;
+  font-family:  var(--checkout-text-font-family);
+  font-weight: 500;
+  font-size: 15px
+}
+
+a.button_paypal:hover, a.button_paypal:active {
+  background-color: var(--secondary);
+  color:white!important
+}
+
+
+}
+</style>
+
+<div id="donate_paypal_wrap">
+            <div id="donate_paypal">
+                <a href="https://na01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fvenmo.com%2Fu%2FElayne-Dell&data=05%7C02%7C%7C9f7c07bde8484a26d72108dd9fbfc7c3%7C84df9e7fe9f640afb435aaaaaaaaaaaa%7C1%7C0%7C638842368216292480%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=Tansz%2FkydAyOM7QUuoZDjUqejidIFkwykxnOM8sMmik%3D&reserved=0" class="button_paypal" target="_blank">🩵 Venmo Elayne</a>
+            </div>	
+        </div>
+		<p style="text-align:center; color:var(--primary); font-weight:bold">No pressure, no expectations</p>
+</p>
 
         
 
