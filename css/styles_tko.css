@@ -161,7 +161,10 @@ body{
 	
 }*/
 
-
+.post-heading{
+text-align:center
+	
+}
 .intro-header .post-heading h1 {
 font-family: var(--theme-second-family)	;
 font-size: 80px
