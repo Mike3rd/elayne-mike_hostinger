@@ -305,8 +305,13 @@ font-weight:normal;
 }
 
 @media screen and (max-width: 600px) {
-  .page-heading h1 {
+	/* front page title size*/
+	.no-img h1 {
 	font-size:50px!important;
+}
+		/* blog title size*/
+  .page-heading h1 .has-img h1 {
+	font-size:80px!important;
 	line-height:100%;
 	margin-bottom:35px
 	}
@@ -314,9 +319,15 @@ font-weight:normal;
 	.well h1 {	
 	font-size:32px!important;
 	}
+	
 	.em_heart{
 	width:50px; display: inline; padding-bottom:0px
 }
+
+
+
+
+
 
 }
 

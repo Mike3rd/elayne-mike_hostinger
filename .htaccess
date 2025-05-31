@@ -1,0 +1,5 @@
+AuthType Basic
+AuthName "Private Site"
+AuthUserFile /home/u940803011/domains/elayne-mike.com/.htpasswd
+Require valid-user
+ErrorDocument 401 /login-failed.html
