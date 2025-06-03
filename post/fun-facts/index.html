@@ -115,23 +115,6 @@
 
 <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
 
-<script>
-  
-  const firebaseConfig = {
-     apiKey: "AIzaSyChNXbfRT4mjIdw_sIgmOnG4fT4bDa0ZKk",
-	  authDomain: "thematic-runner-459319-g4.firebaseapp.com",
-	  projectId: "thematic-runner-459319-g4",
-	  storageBucket: "thematic-runner-459319-g4.firebasestorage.app",
-	  messagingSenderId: "830236525210",
-	  appId: "1:830236525210:web:06634c36b7b67fd1ea1523",
-	  measurementId: "G-6GD8W1KFBC"
-  };
-
-  firebase.initializeApp(firebaseConfig);
-  const db = firebase.firestore();
-</script>
-
-
 
 
 <link rel="stylesheet" href="../../css/comments.css">
@@ -563,6 +546,20 @@ function includeHTML() {
   <ul id="leaderboard"></ul>
 </div>
 
+<script>
+  const firebaseConfig = {
+     apiKey: "AIzaSyChNXbfRT4mjIdw_sIgmOnG4fT4bDa0ZKk",
+	  authDomain: "thematic-runner-459319-g4.firebaseapp.com",
+	  projectId: "thematic-runner-459319-g4",
+	  storageBucket: "thematic-runner-459319-g4.firebasestorage.app",
+	  messagingSenderId: "830236525210",
+	  appId: "1:830236525210:web:06634c36b7b67fd1ea1523",
+	  measurementId: "G-6GD8W1KFBC"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+</script>
 
 <script>
   const questions = [
@@ -655,28 +652,36 @@ function includeHTML() {
   }
 
   async function showLeaderboard() {
-    const leaderboard = document.getElementById("leaderboard");
-    leaderboard.innerHTML = "<li>Loading...</li>";
+  const leaderboard = document.getElementById("leaderboard");
+  leaderboard.innerHTML = "<li>Loading...</li>";
 
-    try {
-      const querySnapshot = await db
-        .collection("scores")
-        .orderBy("score", "desc")
-        .orderBy("timestamp", "asc")
-        .limit(5)
-        .get();
+  try {
+    const querySnapshot = await db
+      .collection("scores")
+      .orderBy("score", "desc")
+      .orderBy("timestamp", "asc")
+      .limit(5)
+      .get();
 
-      leaderboard.innerHTML = "";
-      querySnapshot.forEach((doc, index) => {
-        const data = doc.data();
-        leaderboard.innerHTML += `<li>#${index + 1} — ${data.name}: ${data.score}</li>`;
-      });
-    } catch (err) {
-      leaderboard.innerHTML = "<li>Error loading leaderboard.</li>";
-    }
+    leaderboard.innerHTML = "";
+    querySnapshot.forEach((doc, index) => {
+      const data = doc.data();
+      leaderboard.innerHTML += `<li>#${index + 1} — ${data.name}: ${data.score}</li>`;
+    });
+  } catch (err) {
+    leaderboard.innerHTML = "<li>Error loading leaderboard.</li>";
   }
+}
 
   document.addEventListener("DOMContentLoaded", showLeaderboard);
+  
+  console.log("Firebase initialized:", !!firebase.apps.length);
+console.log("DB object:", db);
+saveScore("Test User", 5).then(() => {
+  console.log("Test score saved!");
+});
+  
+  
 </script>
 
 <h3 id="comments">Comments</h3>
