@@ -65,7 +65,7 @@
   "headline": "Fun Facts",
   "description" : "We\u0026rsquo;ve raced through airports and race courses, but we’re slowing down just enough to say “I do.” Here are some fun facts about us that may or may not involve sunscreen, sneakers, and shared playlists.\n",
   "inLanguage" : "en",
-  "wordCount":  132 ,
+  "wordCount":  131 ,
   "datePublished" : "2025-05-29T16:41:33-04:00",
   "dateModified" : "2025-05-29T16:41:33-04:00",
   "image" : "https:\/\/elayne-mike.com\/",
@@ -400,7 +400,7 @@ function includeHTML() {
 
 
 <section class="fun-facts">
-  <h2 class="section-title">Fun Facts About the Bride & Groom</h2>
+  <h1 class="section-title">Fun Facts About the Bride & Groom</h1>
   <div class="facts-grid">
     <div class="fact-card">
       <span class="emoji">👩‍❤️‍💋‍👨</span>
@@ -473,18 +473,28 @@ function includeHTML() {
 
 <style>
   .quiz-wrapper {
-    max-width: 600px;
+    max-width: 100%;
     margin: 2rem auto;
     padding: 1.5rem;
-    border: 2px solid #ccc;
+    <!--border: 2px solid #ccc;-->
     border-radius: 12px;
     background-color: #f7f7f7;
-    font-family: sans-serif;
+    
   }
-  .quiz-wrapper h2 {
+  .quiz-wrapper h1 {
     text-align: center;
-    color: #c25;
+    color: var(--primary);
+	font-family: var(--theme-title-family);
   }
+  
+    .subtitle-em {
+    font-size: 20px;
+	text-align:center
+  }
+  
+  
+  
+  
   .quiz-wrapper p.subtitle {
     text-align: center;
     font-size: 1.1rem;
@@ -496,12 +506,12 @@ function includeHTML() {
     padding: 0.5rem 1rem;
     border: none;
     border-radius: 8px;
-    background-color: #c25;
+    background-color: var(--primary);
     color: white;
     cursor: pointer;
   }
   button:hover {
-    background-color: #a12;
+    background-color: var(--secondary);
   }
   input[type="text"] {
     padding: 0.5rem;
@@ -516,14 +526,49 @@ function includeHTML() {
     width: 100%;
     margin: 0.3rem 0;
   }
+  
+    .guestname, #guestName {
+    font-weight: normal;
+	font-family: var(--checkout-text-font-family);
+  }
+  
+  #question{
+  font-weight:400;
+  color: var(--primary);
+  font-size: 25px
+  }
+  
+  #leaderboard-box {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 12px;
+  <!--border: 2px solid #ccc;-->
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+#leaderboard {
+  padding: 0.5rem 0;
+}
+
+.leaderboard-entry {
+  margin: 0.3rem 0;
+  padding: 0.4rem 0.8rem;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  font-weight: 500;
+}
+  
+
+  
 </style>
 
 <div class="quiz-wrapper">
-  <h2>🎉 Who Did It: Bride or Groom?</h2>
-  <p class="subtitle">Guess who each fun fact belongs to!</p>
+  <h1>Who Did It: Bride or Groom?</h1>
+  <p class="subtitle-em">Guess who each fun fact belongs to!</p>
 
   <div id="start-screen">
-    <label for="guestName">Your Name:</label><br>
+    <label for="guestName" class="guestname">Your Name:</label><br>
     <input type="text" id="guestName" placeholder="Enter your name" /><br>
     <button onclick="startQuiz()">Start Quiz</button>
   </div>
@@ -542,8 +587,14 @@ function includeHTML() {
     <ul id="summary-list"></ul>
   </div>
 
+
+<div id="leaderboard-box">
   <h3>🏆 Top Scores</h3>
-  <ul id="leaderboard"></ul>
+  <div id="leaderboard"></div>
+</div>
+  
+  
+  
 </div>
 
 <script>
@@ -580,6 +631,7 @@ function includeHTML() {
   let userAnswers = [];
 
   function startQuiz() {
+  questions.sort(() => Math.random() - 0.5);
     const nameInput = document.getElementById("guestName").value.trim();
     if (!nameInput) {
       alert("Please enter your name to begin!");
@@ -663,12 +715,14 @@ function includeHTML() {
       .limit(5)
       .get();
 
-    leaderboard.innerHTML = "";
-    querySnapshot.forEach((doc, index) => {
-      const data = doc.data();
-      const score = typeof data.score === "number" ? data.score : 0;
+	leaderboard.innerHTML = "";
+
+	  querySnapshot.docs.forEach((doc, index) => {
+	  const data = doc.data();
+	  const score = typeof data.score === "number" ? data.score : 0;
 	  const name = data.name || "Unknown";
-	  leaderboard.innerHTML += `<li>#${index + 1} — ${name}: ${score}</li>`;
+
+  leaderboard.innerHTML += `<p class="leaderboard-entry">#${index + 1} — ${name}: ${score}</p>`;
 		
 		console.log("Index:", index);
 		console.log("Doc data:", doc.data());
