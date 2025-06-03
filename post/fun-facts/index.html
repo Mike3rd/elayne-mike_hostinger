@@ -666,9 +666,15 @@ function includeHTML() {
     leaderboard.innerHTML = "";
     querySnapshot.forEach((doc, index) => {
       const data = doc.data();
-      leaderboard.innerHTML += `<li>#${index + 1} — ${data.name}: ${data.score}</li>`;
+      const score = typeof data.score === "number" ? data.score : 0;
+	  const name = data.name || "Unknown";
+	  leaderboard.innerHTML += `<li>#${index + 1} — ${name}: ${score}</li>`;
+		
+		console.log("Index:", index);
+		console.log("Doc data:", doc.data());
     });
   } catch (err) {
+  console.error("Leaderboard load error:", err);
     leaderboard.innerHTML = "<li>Error loading leaderboard.</li>";
   }
 }
@@ -677,9 +683,9 @@ function includeHTML() {
   
   console.log("Firebase initialized:", !!firebase.apps.length);
 console.log("DB object:", db);
-saveScore("Test User", 5).then(() => {
-  console.log("Test score saved!");
-});
+
+
+
   
   
 </script>
