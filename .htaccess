@@ -1,5 +1,16 @@
-AuthType Basic
-AuthName "Private Site"
-AuthUserFile /home/u940803011/domains/elayne-mike.com/.htpasswd
-Require valid-user
-ErrorDocument 401 /login-failed.html
+<FilesMatch "^(private-page|admin|secret).*\.html$">
+  AuthType Basic
+  AuthName "Restricted Area"
+  AuthUserFile /path/to/.htpasswd
+  Require valid-user
+</FilesMatch>
+
+# Allow access to web manifest
+<Files "site.webmanifest">
+  Require all granted
+</Files>
+
+# Allow access to image and script assets
+<FilesMatch "\.(jpg|jpeg|png|gif|js|css|json|webmanifest)$">
+  Require all granted
+</FilesMatch>
