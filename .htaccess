@@ -1,17 +1,6 @@
-<FilesMatch "\.html$">
 AuthType Basic
 AuthName "Private Site"
 AuthUserFile /home/u940803011/domains/elayne-mike.com/.htpasswd
 Require valid-user
 ErrorDocument 401 /login-failed.html
-</FilesMatch>
-
-
-<FilesMatch "\.(js|css|png|jpg|jpeg|gif|svg|ico|webmanifest|json)$">
-  Require all granted
-</FilesMatch>
-
-<Files "site.webmanifest">
-  Require all granted
-</Files>
 
