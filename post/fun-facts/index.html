@@ -65,9 +65,9 @@
   "headline": "Fun Facts",
   "description" : "We\u0026rsquo;ve raced through airports and race courses, but we’re slowing down just enough to say “I do.” Here are some fun facts about us that may or may not involve sunscreen, sneakers, and shared playlists.\n",
   "inLanguage" : "en",
-  "wordCount":  131 ,
-  "datePublished" : "2025-05-29T16:41:33-04:00",
-  "dateModified" : "2025-05-29T16:41:33-04:00",
+  "wordCount":  133 ,
+  "datePublished" : "2025-06-01T16:41:33-04:00",
+  "dateModified" : "2025-06-01T16:41:33-04:00",
   "image" : "https:\/\/elayne-mike.com\/",
   "keywords" : [ "" ],
   "mainEntityOfPage" : "https:\/\/elayne-mike.com\/post\/fun-facts\/",
@@ -320,7 +320,7 @@ function includeHTML() {
                     <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on May 29, 2025
+  <i class="fas fa-calendar"></i>&nbsp;Posted on June 1, 2025
   
   
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
@@ -364,7 +364,7 @@ function includeHTML() {
                 <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on May 29, 2025
+  <i class="fas fa-calendar"></i>&nbsp;Posted on June 1, 2025
   
   
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
@@ -516,7 +516,7 @@ function includeHTML() {
   input[type="text"] {
     padding: 0.5rem;
     width: 100%;
-    max-width: 300px;
+    max-width: 200px;
     margin-bottom: 1rem;
     border-radius: 6px;
     border: 1px solid #aaa;
@@ -568,8 +568,11 @@ function includeHTML() {
   <p class="subtitle-em">Guess who each fun fact belongs to!</p>
 
   <div id="start-screen">
-    <label for="guestName" class="guestname">Your Name:</label><br>
-    <input type="text" id="guestName" placeholder="Enter your name" /><br>
+    <label for="guestFirstName" class="guestname">First Name:</label><br>
+    <input type="text" id="guestFirstName" placeholder="First Name" /><br>
+	
+	<label for="guestLastName" class="guestname">Last Name:</label><br>
+	<input type="text" id="guestLastName" placeholder="Last name" /><br>
     <button onclick="startQuiz()">Start Quiz</button>
   </div>
 
@@ -615,33 +618,62 @@ function includeHTML() {
 <script>
   const questions = [
     {
-      question: "Who made the first move?",
-      answers: ["Bride", "Groom", "It was mutual"],
-      correct: 1
+      question: "Where was their first date?",
+      answers: ["Barren Hill Tavern & Brewery", "Philadelphia Zoo", "Wegmans"],
+      correct: 0
     },
     {
       question: "Who takes longer to get ready?",
       answers: ["Bride", "Groom", "Neither"],
       correct: 0
-    }
+    },
   ];
 
   let currentQuestion = 0;
   let score = 0;
   let userAnswers = [];
 
-  function startQuiz() {
-  questions.sort(() => Math.random() - 0.5);
-    const nameInput = document.getElementById("guestName").value.trim();
-    if (!nameInput) {
-      alert("Please enter your name to begin!");
+  async function startQuiz() {
+  const firstName = document.getElementById("guestFirstName").value.trim();
+  const lastName = document.getElementById("guestLastName").value.trim();
+
+  if (!firstName || !lastName) {
+    alert("Please enter both first and last name to begin!");
+    return;
+  }
+
+  const fullName = `${firstName} ${lastName}`;
+  const scoresRef = db.collection("scores");
+
+  try {
+    const querySnapshot = await scoresRef
+      .where("firstName", "==", firstName)
+      .where("lastName", "==", lastName)
+      .limit(1)
+      .get();
+
+    if (!querySnapshot.empty) {
+      alert(`Hi ${fullName}, you've already played! Thanks for participating!`);
       return;
     }
-
-    document.getElementById("start-screen").style.display = "none";
-    document.getElementById("quiz-container").style.display = "block";
-    showQuestion();
+  } catch (error) {
+    console.error("Error checking existing score:", error);
+    alert("There was a problem checking your score. Please try again.");
+    return;
   }
+
+  // Allow quiz to start
+  const nameEl = document.getElementById("playerName");
+  nameEl.textContent = fullName;
+  nameEl.dataset.fullname = fullName;
+  nameEl.dataset.first = firstName;
+  nameEl.dataset.last = lastName;
+
+  document.getElementById("start-screen").style.display = "none";
+  document.getElementById("quiz-container").style.display = "block";
+
+  showQuestion();
+}
 
   function showQuestion() {
     const q = questions[currentQuestion];
@@ -672,36 +704,42 @@ function includeHTML() {
   }
 
   function endQuiz() {
-    document.getElementById("quiz-container").style.display = "none";
-    document.getElementById("results").style.display = "block";
+  document.getElementById("quiz-container").style.display = "none";
+  document.getElementById("results").style.display = "block";
 
-    const name = document.getElementById("guestName").value.trim() || "Anonymous";
-    document.getElementById("playerName").textContent = name;
-    document.getElementById("score").textContent = score;
-    document.getElementById("total").textContent = questions.length;
+  const nameEl = document.getElementById("playerName");
+  const fullName = nameEl.dataset.fullname || "Anonymous";
+  const firstName = nameEl.dataset.first || "";
+  const lastName = nameEl.dataset.last || "";
 
-    const list = document.getElementById("summary-list");
-    list.innerHTML = "";
-    userAnswers.forEach((ans) => {
-      const li = document.createElement("li");
-      li.textContent = `${ans.question} — You chose: ${ans.answer} (${ans.correct ? "✅" : "❌"})`;
-      list.appendChild(li);
+  nameEl.textContent = fullName;
+  document.getElementById("score").textContent = score;
+  document.getElementById("total").textContent = questions.length;
+
+  const list = document.getElementById("summary-list");
+  list.innerHTML = "";
+  userAnswers.forEach((ans) => {
+    const li = document.createElement("li");
+    li.innerHTML = `<strong>${ans.question}</strong><br>${ans.answer} (${ans.correct ? "✅" : "❌"})`;
+    list.appendChild(li);
+  });
+
+  saveScore(firstName, lastName, fullName, score).then(showLeaderboard);
+}
+
+  async function saveScore(first, last, fullName, score) {
+  try {
+    await db.collection("scores").add({
+      firstName: first,
+      lastName: last,
+      name: fullName,
+      score: score,
+      timestamp: new Date()
     });
-
-    saveScore(name, score).then(showLeaderboard);
+  } catch (e) {
+    console.error("Error saving score:", e);
   }
-
-  async function saveScore(name, score) {
-    try {
-      await db.collection("scores").add({
-        name: name,
-        score: score,
-        timestamp: new Date()
-      });
-    } catch (e) {
-      console.error("Error saving score:", e);
-    }
-  }
+}
 
   async function showLeaderboard() {
   const leaderboard = document.getElementById("leaderboard");
