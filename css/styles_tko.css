@@ -304,6 +304,11 @@ font-weight:normal;
 	
 }
 
+.intro-header .post-heading h1 {
+	font-size:80px!important
+	
+}
+
 @media screen and (max-width: 600px) {
 	/* front page title size*/
 	.no-img h1 {
@@ -324,7 +329,10 @@ font-weight:normal;
 	width:50px; display: inline; padding-bottom:0px
 }
 
-
+.intro-header .post-heading h1 {
+	font-size:60px!important
+	
+}
 
 
 

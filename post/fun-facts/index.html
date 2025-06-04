@@ -12,9 +12,9 @@
  
 
 
-      <title>How Well Do You Know the Couple? - Elayne and Mike are Getting Married!</title>
+      <title>Bride &amp; Groom Trivia Showdown - Elayne and Mike are Getting Married!</title>
 
-  <meta name="description" content="About the Bride &amp; Groom">
+  <meta name="description" content="Test Your Bride &amp; Groom Knowlege">
   <meta name="author" content="Elayne and Mike"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -51,7 +51,7 @@
         "position": 3,
         "item": {
           "@id": "https:\/\/elayne-mike.com\/post\/fun-facts\/",
-          "name": "How well do you know the couple?"
+          "name": "Bride \u0026 groom trivia showdown"
         }
     }]
 }
@@ -62,10 +62,10 @@
   "author": {
     "name" : "Elayne and Mike"
   },
-  "headline": "How Well Do You Know the Couple?",
-  "description" : " Bride \u0026 Groom Trivia Showdown 10 questions. Some true, some fake. All entertaining.\nGuess your way through our relationship rewind!\n",
+  "headline": "Bride \u0026 Groom Trivia Showdown",
+  "description" : " How Well do you Know the Couple? 15 questions. Some true, some fake. All entertaining.\nGuess your way through our relationship rewind!\nTies are ranked by completion time.\n",
   "inLanguage" : "en",
-  "wordCount":  48 ,
+  "wordCount":  50 ,
   "datePublished" : "2025-06-01T16:41:33-04:00",
   "dateModified" : "2025-06-01T16:41:33-04:00",
   "image" : "https:\/\/elayne-mike.com\/",
@@ -85,15 +85,15 @@
 </script>
 
 
-<meta property="og:title" content="How Well Do You Know the Couple?" />
-<meta property="og:description" content="About the Bride &amp; Groom">
+<meta property="og:title" content="Bride &amp; Groom Trivia Showdown" />
+<meta property="og:description" content="Test Your Bride &amp; Groom Knowlege">
 <meta property="og:image" content="https://elayne-mike.com/img/facts.webp" />
 <meta property="og:url" content="https://elayne-mike.com/post/fun-facts/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Elayne-Mike.com" />
 
-  <meta name="twitter:title" content="How Well Do You Know the Couple?" />
-  <meta name="twitter:description" content="About the Bride &amp; Groom">
+  <meta name="twitter:title" content="Bride &amp; Groom Trivia Showdown" />
+  <meta name="twitter:description" content="Test Your Bride &amp; Groom Knowlege">
   <meta name="twitter:image" content="https://elayne-mike.com/img/facts.webp" />
   <meta name="twitter:card" content="summary_large_image" />
   <link href='https://elayne-mike.com/img/favicon.ico' rel='icon' type='image/x-icon'/>
@@ -310,10 +310,10 @@ function includeHTML() {
           <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
               <div class="post-heading">
-                <h1>How Well Do You Know the Couple?</h1>
+                <h1>Bride &amp; Groom Trivia Showdown</h1>
                   
                     
-                      <h2 class="post-subheading">About the Bride &amp; Groom</h2>
+                      <h2 class="post-subheading">Test Your Bride &amp; Groom Knowlege</h2>
                     
                   
                   
@@ -352,12 +352,12 @@ function includeHTML() {
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="post-heading">
               
-                <h1>How Well Do You Know the Couple?</h1>
+                <h1>Bride &amp; Groom Trivia Showdown</h1>
               
               
               
                 
-                  <h2 class="post-subheading">About the Bride &amp; Groom</h2>
+                  <h2 class="post-subheading">Test Your Bride &amp; Groom Knowlege</h2>
                 
               
               
@@ -484,14 +484,25 @@ function includeHTML() {
   border-radius: 8px;
   font-weight: 500;
 }
-  
 
+#question-container p {
+text-align:center;
+
+}
+  
+.subtitle-em {
+border-bottom: solid 1px #ccc;
+padding-bottom: 15px;
+margin-bottom:15px
+}
   
 </style>
 
 <div class="quiz-wrapper">
-  <h1>Bride & Groom Trivia Showdown</h1>
-<p class="subtitle-em">10 questions. Some true, some fake. All entertaining.<br>Guess your way through our relationship rewind!</p>
+  <h1>How Well do you Know the Couple?</h1>
+<p class="subtitle-em">15 questions. Some true, some fake. All entertaining.<br>Guess your way through our relationship rewind!<br>
+<i>Ties are ranked by completion time.</i></p>
+
 
   <div id="start-screen">
     <label for="guestFirstName" class="guestname">First Name:</label><br>
@@ -522,7 +533,7 @@ function includeHTML() {
 
 <div id="leaderboard-box">
   <h3>🏆 Top Scores</h3>
-  <p>Ties are ranked by completion time.</p>
+ <!-- <p>Ties are ranked by completion time.</p>-->
   <div id="leaderboard"></div>
   <button id="showMoreBtn" style="display: none; margin-top: 1rem;">Show More</button>
 </div>
@@ -548,46 +559,69 @@ function includeHTML() {
 
 <script>
   const questions = [
-    {
-      question: "Where was their first date?",
-      answers: ["Barren Hill Tavern & Brewery", "Philadelphia Zoo", "Wegmans"],
-      correct: 0
-    },
-	 {
-    question: "What’s Toby their dog's favorite treat?",
-    answers: ["Squeaky donut", "Lasagna", "Cheese"],
+  {
+    question: "Where was their first date?",
+    answers: ["Barren Hill Tavern & Brewery", "Philadelphia Zoo", "Wegmans"],
+    correct: 0
+  },
+  {
+    question: "What’s their dog's favorite treat?",
+    answers: ["Postmen", "Lasagna", "Cheese"],
     correct: 2
   },
   {
-    question: "What’s their go to TV show?",
+    question: "What’s their go-to TV show?",
     answers: ["C-SPAN 3", "Project Runway", "Alf"],
     correct: 1
   },
-	 {
-      question: "Where were they stranded thanks to Covid?",
-      answers: ["Schwenksville", "Bermuda", "Galapagos Islands"],
-      correct: 2
-	  },
-	{
-      question: "What was their first home purchase?",
-      answers: ["Tool Chest", "Curtains", "Lawn Mower"],
-      correct: 0
-    },
-	
-	{
-	question: "What kind of music do they bond over most?",
+  {
+    question: "Where were they stranded and quarantined for 6 days thanks to Covid?",
+    answers: ["Schwenksville", "Bermuda", "Galapagos Islands"],
+    correct: 2
+  },
+  {
+    question: "What was their first home purchase?",
+    answers: ["Tool Chest", "Curtains", "Lawn Mower"],
+    correct: 0
+  },
+  {
+    question: "What kind of music do they bond over most?",
     answers: ["Jazz", "Yacht Rock", "Dolphin mating calls"],
     correct: 1
   },
   
+   {
+    question: "What's their dog's actual name?",
+    answers: ["Toby Z Longfellow", "Sir Sleeps All Day", "Bruiser"],
+    correct: 0
+  },
+  
   {
-	question: "Who did they think lost their passport in Ecuador but found it after a day spent of getting a new one?",
-    answers: ["Mike", "Elayne", "Dolphin mating calls"],
+    question: "Where did they meet?",
+    answers: ["Through friends", "At work", "Match.com"],
     correct: 2
   },
-
-  
-  ];
+  {
+    question: "Who lost their passport-which was later found after a full day spent getting a new one-in Ecuador?",
+    answers: ["Mike", "Elayne", "Both were at fault, regardless who's it was"],
+    correct: 2
+  },
+  {
+    question: "What is their favorite activity while on vacation?",
+    answers: ["Wandering markets", "Museums", "Snorkeling"],
+    correct: 2
+  },
+  {
+    question: "What was the name of their first fish?",
+    answers: ["Gobie", "Toby II", "Sir Swim-a-lot"],
+    correct: 0
+  },
+  {
+    question: "How well do *you* know them?",
+    answers: ["I’m basically family", "I’ve been guessing wildly", "Wait—who are we talking about?"],
+    correct: 2 
+  }
+];
 
   let currentQuestion = 0;
   let score = 0;
