@@ -65,7 +65,7 @@
   "headline": "Fun Facts",
   "description" : "We\u0026rsquo;ve raced through airports and race courses, but we’re slowing down just enough to say “I do.” Here are some fun facts about us that may or may not involve sunscreen, sneakers, and shared playlists.\n",
   "inLanguage" : "en",
-  "wordCount":  133 ,
+  "wordCount":  146 ,
   "datePublished" : "2025-06-01T16:41:33-04:00",
   "dateModified" : "2025-06-01T16:41:33-04:00",
   "image" : "https:\/\/elayne-mike.com\/",
@@ -466,6 +466,22 @@ function includeHTML() {
   display: block;
   margin-bottom: 0.5rem;
 }
+
+#results-card ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#results-card li {
+  background: #f0f0f0;
+  margin: 0.5rem 0;
+  padding: 0.6rem;
+  border-radius: 8px;
+  font-family: var(--checkout-text-font-family);
+}
+
+
+
 </style>
 
 
@@ -564,8 +580,8 @@ function includeHTML() {
 </style>
 
 <div class="quiz-wrapper">
-  <h1>Who Did It: Bride or Groom?</h1>
-  <p class="subtitle-em">Guess who each fun fact belongs to!</p>
+  <h1>Bride & Groom Trivia Showdown</h1>
+  <p class="subtitle-em">Some are true. Some are fake. All are entertaining. Guess your way through our relationship rewind.</p>
 
   <div id="start-screen">
     <label for="guestFirstName" class="guestname">First Name:</label><br>
@@ -584,16 +600,20 @@ function includeHTML() {
   </div>
 
   <div id="results" style="display: none;">
-    <h3>Well done, <span id="playerName"></span>!</h3>
-    <p>You scored <span id="score"></span>/<span id="total"></span></p>
+  <div id="results-card" class="quiz-wrapper" style="background-color: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.1); padding: 1rem;">
+    <h3>Well done, <span id="playerName"></span>! 🎉</h3>
+    <p>You scored <strong><span id="score"></span></strong></p>
+	<p id="result-scale"></p>
     <h4>Summary:</h4>
     <ul id="summary-list"></ul>
+    <p>Thanks for playing!</p>
   </div>
-
+</div>
 
 <div id="leaderboard-box">
   <h3>🏆 Top Scores</h3>
   <div id="leaderboard"></div>
+  <button id="showMoreBtn" style="display: none; margin-top: 1rem;">Show More</button>
 </div>
   
   
@@ -602,7 +622,7 @@ function includeHTML() {
 
 <script>
   const firebaseConfig = {
-     apiKey: "AIzaSyChNXbfRT4mjIdw_sIgmOnG4fT4bDa0ZKk",
+     apiKey: "AIzaSyDAIynhq-fFfiuPU1zsUK_3TUUxjR-MX3o",
 	  authDomain: "thematic-runner-459319-g4.firebaseapp.com",
 	  projectId: "thematic-runner-459319-g4",
 	  storageBucket: "thematic-runner-459319-g4.firebasestorage.app",
@@ -622,11 +642,16 @@ function includeHTML() {
       answers: ["Barren Hill Tavern & Brewery", "Philadelphia Zoo", "Wegmans"],
       correct: 0
     },
-    {
-      question: "Who takes longer to get ready?",
-      answers: ["Bride", "Groom", "Neither"],
-      correct: 0
-    },
+	 {
+    question: "What’s Toby their dog's favorite treat?",
+    answers: ["Squeaky donut", "Lasagna", "Cheese"],
+    correct: 2
+  },
+  {
+    question: "What’s their go to TV show?",
+    answers: ["C-SPAN 3", "Project Runway", "Alf"],
+    correct: 1
+  },
 	 {
       question: "Where were they stranded thanks to Covid?",
       answers: ["Schwenksville", "Bermuda", "Galapagos Islands"],
@@ -636,7 +661,21 @@ function includeHTML() {
       question: "What was their first home purchase?",
       answers: ["Tool Chest", "Curtains", "Lawn Mower"],
       correct: 0
-    }
+    },
+	
+	{
+	question: "What kind of music do they bond over most?",
+    answers: ["Jazz", "Yacht Rock", "Dolphin mating calls"],
+    correct: 1
+  },
+  
+  {
+	question: "Who did they think lost their passport in Ecuador but found it after a day of getting a new one?",
+    answers: ["Mike", "Elayne", "Dolphin mating calls"],
+    correct: 2
+  },
+
+  
   ];
 
   let currentQuestion = 0;
@@ -672,7 +711,7 @@ function includeHTML() {
     return;
   }
 
-  // Allow quiz to start
+
   const nameEl = document.getElementById("playerName");
   nameEl.textContent = fullName;
   nameEl.dataset.fullname = fullName;
@@ -696,7 +735,12 @@ function includeHTML() {
       const btn = document.createElement("button");
       btn.textContent = answer;
       btn.onclick = () => {
-        userAnswers.push({ question: q.question, answer, correct: index === q.correct });
+        userAnswers.push({
+		  question: q.question,
+		  answer,
+		  correctAnswer: q.answers[q.correct], // <--- this line fixes your display
+		  correct: index === q.correct
+		});
         if (index === q.correct) score++;
         nextQuestion();
       };
@@ -722,21 +766,37 @@ function includeHTML() {
   const firstName = nameEl.dataset.first || "";
   const lastName = nameEl.dataset.last || "";
 
-  nameEl.textContent = fullName;
-  document.getElementById("score").textContent = score;
-  document.getElementById("total").textContent = questions.length;
+  const percentage = Math.round((score / questions.length) * 100);
+  const header = document.querySelector("#results-card h3");
+  if (percentage >= 75) {
+    header.innerHTML = `🎉 Well done, ${fullName}!`;
+  } else {
+    header.innerHTML = `👋 Good effort, ${fullName}!`;
+  }
+
+  
+document.getElementById("score").textContent = `${score}/${questions.length} (${percentage}%)`;
+
+  // ⭐ Star rating based on score
+  const scaleEl = document.getElementById("result-scale");
+  const starCount = percentage === 100 ? 4 : percentage >= 75 ? 3 : percentage >= 50 ? 2 : 1;
+  const stars = "⭐".repeat(starCount);
+  scaleEl.innerHTML = `<strong>Your Star Rating:</strong> ${stars}`;
 
   const list = document.getElementById("summary-list");
   list.innerHTML = "";
   userAnswers.forEach((ans) => {
     const li = document.createElement("li");
-    li.innerHTML = `<strong>${ans.question}</strong><br>${ans.answer} (${ans.correct ? "✅" : "❌"})`;
+    li.innerHTML = `
+      <strong>${ans.question}</strong><br>
+      Your answer: ${ans.answer} ${ans.correct ? "✅" : "❌"}<br>
+      Correct answer: <em>${ans.correctAnswer}</em>
+    `;
     list.appendChild(li);
   });
 
   saveScore(firstName, lastName, fullName, score).then(showLeaderboard);
 }
-
   async function saveScore(first, last, fullName, score) {
   try {
     await db.collection("scores").add({
@@ -751,45 +811,58 @@ function includeHTML() {
   }
 }
 
-  async function showLeaderboard() {
+
+let showingAll = false;
+
+async function showLeaderboard(showAll = false) {
   const leaderboard = document.getElementById("leaderboard");
-  leaderboard.innerHTML = "<li>Loading...</li>";
+  const showMoreBtn = document.getElementById("showMoreBtn");
+
+  const limit = showAll ? 100 : 5;
 
   try {
-    const querySnapshot = await db
+    const allScores = await db
       .collection("scores")
       .orderBy("score", "desc")
       .orderBy("timestamp", "asc")
-      .limit(5)
       .get();
 
-	leaderboard.innerHTML = "";
+    const scoresToShow = showAll ? allScores.docs : allScores.docs.slice(0, 5);
+    leaderboard.innerHTML = "";
 
-	  querySnapshot.docs.forEach((doc, index) => {
-	  const data = doc.data();
-	  const score = typeof data.score === "number" ? data.score : 0;
-	  const name = data.name || "Unknown";
-
-  leaderboard.innerHTML += `<p class="leaderboard-entry">#${index + 1} — ${name}: ${score}</p>`;
-		
-		console.log("Index:", index);
-		console.log("Doc data:", doc.data());
+    scoresToShow.forEach((doc, index) => {
+      const data = doc.data();
+      const score = typeof data.score === "number" ? data.score : 0;
+      const name = data.name || "Unknown";
+      leaderboard.innerHTML += `<p class="leaderboard-entry">#${index + 1} — ${name}: ${score}</p>`;
     });
+
+    if (showAll !== true && allScores.docs.length > 5) {
+      showMoreBtn.style.display = "inline-block";
+    } else {
+      showMoreBtn.style.display = "none";
+    }
+
   } catch (err) {
-  console.error("Leaderboard load error:", err);
-    leaderboard.innerHTML = "<li>Error loading leaderboard.</li>";
+    console.error("Leaderboard load error:", err);
+    leaderboard.innerHTML = "<p>Error loading leaderboard.</p>";
+    showMoreBtn.style.display = "none";
   }
 }
 
-  document.addEventListener("DOMContentLoaded", showLeaderboard);
+document.getElementById("showMoreBtn").addEventListener("click", () => {
+  showingAll = true;
+  showLeaderboard(true);
+});
+<!------------>
+  document.addEventListener("DOMContentLoaded", () => showLeaderboard(false));
   
   console.log("Firebase initialized:", !!firebase.apps.length);
 console.log("DB object:", db);
 
 
-
-  
-  
+window.startQuiz = startQuiz;
+ 
 </script>
 
 <h3 id="comments">Comments</h3>
