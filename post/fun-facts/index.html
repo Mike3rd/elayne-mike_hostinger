@@ -501,25 +501,30 @@ padding-bottom:15px
 }
 
 button {
-  touch-action: manipulation;
-  -webkit-tap-highlight-color: transparent;
+  background-color: #f0f0f0;
+  border: none;
+  padding: 0.75em 1.25em;
+  margin: 0.5em 0;
+  border-radius: 5px;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 400px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
-button:focus {
-  outline: none;
-}
-
-button:active,
-button:focus,
-button:hover {
-  background-color: var(--secondary);
-}
-
-/* Optionally remove hover effects entirely on mobile: */
-@media (hover: none) {
+/* Hover color for desktop */
+@media (hover: hover) {
   button:hover {
-    background-color: inherit !important;
+    background-color: #dceeff;
   }
+}
+
+/* Focus and active state */
+button:focus,
+button:active {
+  outline: none;
+  background-color: #cce0ff;
 }
 
 
