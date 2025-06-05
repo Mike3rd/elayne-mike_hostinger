@@ -63,7 +63,7 @@
     "name" : "Elayne and Mike"
   },
   "headline": "Bride \u0026 Groom Trivia Showdown",
-  "description" : " How Well do you Know the Couple? 14 questions. Some true, some fake. All entertaining.\n",
+  "description" : " How Well do you Know the Couple? 15 questions. Some true, some fake. All entertaining.\n",
   "inLanguage" : "en",
   "wordCount":  50 ,
   "datePublished" : "2025-06-01T16:41:33-04:00",
@@ -511,6 +511,24 @@ padding-bottom:15px
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.trivia-btn {
+  background-color: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 1em 1.5em;
+  margin: 0.5em 0;
+  border-radius: 8px;
+  font-size: 1.8rem;
+  width: 100%;
+  max-width: 200px;
+  display: block;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+
+}
+
 #answer-buttons {
   display: flex;
   flex-direction: column;
@@ -520,7 +538,7 @@ padding-bottom:15px
 
 /* Hover effect only for devices that support it */
 @media (hover: hover) {
-  .quiz-btn:hover {
+  .quiz-btn:hover, .trivia-btn:hover {
     background-color: var(--secondary);
   }
 }
@@ -534,8 +552,8 @@ padding-bottom:15px
 
 /* Responsive improvements for mobile */
 @media screen and (max-width: 600px) {
-  .quiz-btn {
-    font-size: 1.3rem;
+  .quiz-btn, .trivia-btn {
+    font-size: 1.5rem;
     padding: 1.2em;
   }
 }
@@ -560,7 +578,7 @@ font-size:18px
 
 <div class="quiz-wrapper">
 <h1>How Well do you Know the Couple?</h1>
-<p class="subtitle-em">14 questions. Some true, some fake. All entertaining.</p>
+<p class="subtitle-em">15 questions. Some true, some fake. All entertaining.</p>
 <p class="subtitle-em">Guess your way through our relationship rewind!</p>
 <p class="subtitle-em border-bottom"><i>Ties are ranked by completion time.</i></p>
 
@@ -571,7 +589,7 @@ font-size:18px
 	
 	<label for="guestLastName" class="guestname">Last Name:</label><br>
 	<input type="text" id="guestLastName" placeholder="Last name" /><br>
-    <button onclick="startQuiz()">Start Quiz</button>
+    <button class="trivia-btn" onclick="startQuiz()">Start Quiz</button>
   </div>
 
   <div id="quiz-container" style="display: none;">
@@ -596,7 +614,7 @@ font-size:18px
   <h3>🏆 Top Scores</h3>
  <!-- <p>Ties are ranked by completion time.</p>-->
   <div id="leaderboard"></div>
-  <button id="showMoreBtn" style="display: none; margin-top: 1rem;">Show More</button>
+  <button class="trivia-btn" id="showMoreBtn" style="display: none; margin-top: 1rem;">Show More</button>
 </div>
   
   
@@ -664,9 +682,19 @@ font-size:18px
   },
   {
     question: "Who lost their passport— which was later found after a full day spent getting a new one— in Ecuador?",
-    answers: ["Mike", "Elayne", "Both are to blame, regardless of who's it was"],
+    answers: ["Mike", "Elayne", 'Both were to blame, regardless of whos passport was "lost".'],
     correct: 2
   },
+   {
+    question: "What did Mike say when Elayne suggested a second dog?",
+    answers: [
+      '“That’s a hard maybe.”',
+      '"Only if it does dishes."',
+      "No memory of this conversation",
+	  '"Only if it does dishes."'
+    ],
+    correct: 1
+	},
   {
     question: "What is their favorite activity while on vacation?",
     answers: ["Wandering markets", "Museums", "Snorkeling", "Golf"],
