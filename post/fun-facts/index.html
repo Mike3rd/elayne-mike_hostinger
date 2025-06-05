@@ -65,7 +65,7 @@
   "headline": "Bride \u0026 Groom Trivia Showdown",
   "description" : " How Well do you Know the Couple? 15 questions. Some true, some fake. All entertaining.\n",
   "inLanguage" : "en",
-  "wordCount":  51 ,
+  "wordCount":  47 ,
   "datePublished" : "2025-06-01T16:41:33-04:00",
   "dateModified" : "2025-06-01T16:41:33-04:00",
   "image" : "https:\/\/elayne-mike.com\/",
@@ -398,7 +398,7 @@ function includeHTML() {
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
         
-
+<span id="playerName" style="display: none;"></span>
 <div class="quiz-wrapper">
 <h1>How Well do you Know the Couple?</h1>
 <p class="subtitle-em">15 questions. Some true, some fake. All entertaining.</p>
@@ -421,13 +421,16 @@ function includeHTML() {
       <div id="answer-buttons" class="answer-buttons"></div>
     </div>
   </div>
+  </div>
 
 <section class="quiz-results-section">
   <div id="results" style="display: none;">
     <div id="results-card" class="quiz-wrapper">
-      <h3>Well done, <span id="playerName"></span>! 🎉</h3>
+	<div id="results-header-wrap">
+      <h1 id="resultsHeader"></h1>
       <p>You scored <strong><span id="score"></span></strong></p>
       <p id="result-scale"></p>
+	</div>  
       <h4>Summary:</h4>
       <ul id="summary-list"></ul>
       <button id="closeResultsBtn" class="quiz-btn">Close</button>
@@ -443,7 +446,7 @@ function includeHTML() {
   <button class="trivia-btn" id="showMoreBtn" style="display: none; margin-top: 1rem;">Show More</button>
 </div>
 
-</div>
+
 
 <script>
   const firebaseConfig = {
@@ -560,6 +563,11 @@ function includeHTML() {
     alert("Please enter both first and last name to begin!");
     return;
   }
+  
+
+  currentQuestion = 0;
+  score = 0;
+  userAnswers = [];
 
   const fullName = `${firstName} ${lastName}`;
   const scoresRef = db.collection("scores");
@@ -583,10 +591,14 @@ function includeHTML() {
 
 
   const nameEl = document.getElementById("playerName");
-  nameEl.textContent = fullName;
-  nameEl.dataset.fullname = fullName;
-  nameEl.dataset.first = firstName;
-  nameEl.dataset.last = lastName;
+  if (!nameEl) {
+  console.error("playerName element not found");
+  return;
+  }
+nameEl.textContent = fullName;
+nameEl.dataset.fullname = fullName;
+nameEl.dataset.first = firstName;
+nameEl.dataset.last = lastName;
 
   document.getElementById("start-screen").style.display = "none";
   document.getElementById("quiz-container").style.display = "block";
@@ -649,12 +661,12 @@ function includeHTML() {
   const lastName = nameEl.dataset.last || "";
 
   const percentage = Math.round((score / questions.length) * 100);
-  const header = document.querySelector("#results-card h3");
+  const header = document.getElementById("resultsHeader");
   if (percentage >= 75) {
-    header.innerHTML = `🎉 Well done, ${fullName}!`;
-  } else {
-    header.innerHTML = `👋 Good effort, ${fullName}!`;
-  }
+  header.innerHTML = `🎉<br>Well Done!,<br>${fullName}!`;
+} else {
+  header.innerHTML = `👋 <br>Good Effort,<br>${fullName}!`;
+}
 
   
 document.getElementById("score").textContent = `${score}/${questions.length} (${percentage}%)`;
@@ -663,7 +675,7 @@ document.getElementById("score").textContent = `${score}/${questions.length} (${
   const scaleEl = document.getElementById("result-scale");
   const starCount = percentage === 100 ? 4 : percentage >= 75 ? 3 : percentage >= 50 ? 2 : 1;
   const stars = "⭐".repeat(starCount);
-  scaleEl.innerHTML = `<strong>Your Star Rating:</strong> ${stars}`;
+  scaleEl.innerHTML = `<strong>Your Star Rating:<br></strong> ${stars}`;
 
   const list = document.getElementById("summary-list");
   list.innerHTML = "";
@@ -737,13 +749,16 @@ document.getElementById("showMoreBtn").addEventListener("click", () => {
   showLeaderboard(true);
 });
 <!------------>
-  document.addEventListener("DOMContentLoaded", () => showLeaderboard(false));
+	document.addEventListener("DOMContentLoaded", () => showLeaderboard(false));
   
-  console.log("Firebase initialized:", !!firebase.apps.length);
-console.log("DB object:", db);
+	console.log("Firebase initialized:", !!firebase.apps.length);
+	console.log("DB object:", db);
 
-document.getElementById("closeResultsBtn").addEventListener("click", () => {
-  document.getElementById("results").style.display = "none";
+	document.getElementById("closeResultsBtn").addEventListener("click", () => {
+	document.getElementById("results").style.display = "none";
+    document.getElementById("start-screen").style.display = "block";
+	
+
 
 });
 
@@ -781,6 +796,10 @@ window.startQuiz = startQuiz;
 
       
         <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://elayne-mike.com/post/new-2/" data-toggle="tooltip" data-placement="top" title="">&larr; Previous Post</a>
+            </li>
           
           
         </ul>

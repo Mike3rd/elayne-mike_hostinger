@@ -111,7 +111,7 @@ padding-bottom:15px
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.trivia-btn {
+.trivia-btn, #closeResultsBtn {
   background-color: var(--primary);
   color: #fff;
   border: none;
@@ -125,8 +125,6 @@ padding-bottom:15px
   cursor: pointer;
   transition: background-color 0.2s ease, transform 0.1s ease;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
-
 }
 
 #answer-buttons {
@@ -168,40 +166,72 @@ padding-bottom:15px
 /* RESULTS SUMMARY */
 
 #results {
-  padding: 1rem;
+  
   display: flex;
   justify-content: center;
 }
+
+
+#results-header-wrap {
+	
+
+padding:2rem 0;
+
+
+background-color: #f9f9f9;
+  border-left: 4px solid var(--primary);
+
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);	
+	
+}
+
+
 
 #results-card {
   background: #fff;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
   padding: 2rem;
   border-radius: 12px;
-  max-width: 800px;
   width: 100%;
+  max-width: 100%; /* Change from 800px */
   font-size: 1.2rem;
   line-height: 1.6;
   text-align: center;
 }
 
-#results-card h3,
-#results-card h4 {
-  font-size: 1.8rem;
+#results-card h1 {
+
   color: var(--primary);
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
+  font-family: var(--theme-title-family);
+}
+
+#results-card h4 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  color: var(--primary);
+  text-align:left
 }
 
 #results-card p {
-  font-size: 1.2rem;
+  font-size: 1.7rem;
   margin: 0.5rem 0;
 }
 
 #result-scale {
-  font-size: 1.3rem;
+  font-size: 1.7rem;
   font-weight: bold;
   color: var(--secondary);
   margin-bottom: 1.5rem;
+}
+
+.quiz-wrapper,
+#results-card {
+  margin: 2rem auto;
+  padding: 1.5rem;
 }
 
 #summary-list {
@@ -218,7 +248,7 @@ padding-bottom:15px
   margin-bottom: 1rem;
   border-radius: 8px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-  font-size: 1.1rem;
+  font-size: 1.6rem; /* ~25.6px, readable but not huge */
   line-height: 1.5;
 }
 
@@ -233,14 +263,20 @@ padding-bottom:15px
     font-size: 1rem;
   }
 
-  #results-card h3,
+    #results-card h1 {
+   
+  }
   #results-card h4 {
-    font-size: 1.4rem;
+    font-size: 2rem;
+	text-align:center;
   }
 
   #summary-list li {
     padding: 0.8rem;
   }
+  
+  
+  
 }
 
 /* END RESULTS SUMMARY */
@@ -254,7 +290,7 @@ margin-bottom:5px;
 font-size:18px
 }
   
- input[type="text"], .trivia-btn {
+ input[type="text"], .trivia-btn, #closeResultsBtn {
     max-width: 100%;
 } 
   
