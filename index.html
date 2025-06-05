@@ -477,22 +477,21 @@ padding-bottom:15px
 
 
 
-/* Hover color for desktop */
-@media (hover: hover) {
-  button:hover {
-    background-color: var(--primary);
-  }
-}
+
 
 /* Focus and active state */
 button:focus,
 button:active {
   outline: none;
-  background-color: var(--secondary);
+  background-color: var(--primary);
 }
 
 
-
+@media (hover: none) {
+  button:hover {
+    background-color: inherit !important;
+  }
+}
 
 
 
