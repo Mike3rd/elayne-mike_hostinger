@@ -1,0 +1,265 @@
+.quiz-wrapper {
+    max-width: 100%;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    /*border: 2px solid #ccc;*/
+    border-radius: 12px;
+    background-color: #f7f7f7;
+    
+  }
+  .quiz-wrapper h1 {
+    text-align: center;
+    color: var(--primary);
+	font-family: var(--theme-title-family);
+  }
+  
+    .subtitle-em {
+    font-size: 20px;
+	text-align:center
+  }
+ 
+  .quiz-wrapper p.subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-top: -1rem;
+    margin-bottom: 1.5rem;
+  }
+ 
+  input[type="text"] {
+    padding: 0.5rem;
+    width: 100%;
+    max-width: 200px;
+    margin-bottom: 1rem;
+    border-radius: 6px;
+    border: 1px solid #aaa;
+  }
+  .answer-buttons button {
+    display: block;
+    width: 100%;
+    margin: 0.3rem 0;
+  }
+  
+    .guestname, #guestName {
+    font-weight: normal;
+	font-family: var(--checkout-text-font-family);
+  }
+  
+  #question{
+  font-weight:400;
+  color: var(--primary);
+  font-size: 25px
+  }
+  
+  #leaderboard-box {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 12px;
+  /*border: 2px solid #ccc;*/
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+#leaderboard {
+  padding: 0.5rem 0;
+}
+
+.leaderboard-entry {
+  margin: 0.3rem 0;
+  padding: 0.4rem 0.8rem;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+#question-container p{
+text-align:center;
+line-height:107%;
+padding-top:15px
+
+}
+
+#answer-buttons{
+margin-top:15px
+}
+  
+  
+.subtitle-em {
+margin:0px
+}
+
+.border-bottom {
+border-bottom: solid 1px #ccc;
+margin-bottom:15px;
+padding-bottom:15px
+}
+
+/*Answer buttons*/
+
+.quiz-btn {
+  background-color: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 1em 1.5em;
+  margin: 0.5em 0;
+  border-radius: 8px;
+  font-size: 1.8rem;
+  width: 100%;
+  max-width: 500px;
+  display: block;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.trivia-btn {
+  background-color: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 1em 1.5em;
+  margin: 0.5em 0;
+  border-radius: 8px;
+  font-size: 1.8rem;
+  width: 100%;
+  max-width: 200px;
+  display: block;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+
+}
+
+#answer-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+/* Hover effect only for devices that support it */
+@media (hover: hover) {
+  .quiz-btn:hover, .trivia-btn:hover {
+    background-color: var(--secondary);
+  }
+}
+
+.quiz-btn:focus,
+.quiz-btn:active {
+  background-color: var(--secondary);
+  outline: none;
+  transform: scale(0.98);
+}
+
+/* Responsive improvements for mobile */
+@media screen and (max-width: 600px) {
+  .quiz-btn, .trivia-btn {
+    font-size: 1.5rem;
+    padding: 1.2em;
+  }
+}
+
+
+
+/*end answer buttons*/
+
+
+
+
+/* RESULTS SUMMARY */
+
+#results {
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+#results-card {
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 800px;
+  width: 100%;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+#results-card h3,
+#results-card h4 {
+  font-size: 1.8rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+#results-card p {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+#result-scale {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--secondary);
+  margin-bottom: 1.5rem;
+}
+
+#summary-list {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+  text-align: left;
+}
+
+#summary-list li {
+  background-color: #f9f9f9;
+  border-left: 4px solid var(--primary);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+#summary-list li em {
+  color: #555;
+}
+
+
+@media screen and (max-width: 600px) {
+  #results-card {
+    padding: 1.2rem;
+    font-size: 1rem;
+  }
+
+  #results-card h3,
+  #results-card h4 {
+    font-size: 1.4rem;
+  }
+
+  #summary-list li {
+    padding: 0.8rem;
+  }
+}
+
+/* END RESULTS SUMMARY */
+
+
+@media screen and (max-width: 600px) {
+.subtitle-em {
+text-align:center;
+line-height:130%;
+margin-bottom:5px;
+font-size:18px
+}
+  
+ input[type="text"], .trivia-btn {
+    max-width: 100%;
+} 
+  
+  
+  
+  
+}/*end media screen*/
+  
