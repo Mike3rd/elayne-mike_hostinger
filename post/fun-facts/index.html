@@ -402,7 +402,7 @@ function includeHTML() {
     max-width: 100%;
     margin: 2rem auto;
     padding: 1.5rem;
-    <!--border: 2px solid #ccc;-->
+    /*border: 2px solid #ccc;*/
     border-radius: 12px;
     background-color: #f7f7f7;
     
@@ -455,7 +455,7 @@ function includeHTML() {
   padding: 1rem;
   background-color: #fff;
   border-radius: 12px;
-  <!--border: 2px solid #ccc;-->
+  /*border: 2px solid #ccc;*/
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
@@ -493,7 +493,56 @@ margin-bottom:15px;
 padding-bottom:15px
 }
 
+/*Answer buttons*/
 
+.quiz-btn {
+  background-color: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 1em 1.5em;
+  margin: 0.5em 0;
+  border-radius: 8px;
+  font-size: 1.8rem;
+  width: 100%;
+  max-width: 500px;
+  display: block;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#answer-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+/* Hover effect only for devices that support it */
+@media (hover: hover) {
+  .quiz-btn:hover {
+    background-color: var(--secondary);
+  }
+}
+
+.quiz-btn:focus,
+.quiz-btn:active {
+  background-color: var(--secondary);
+  outline: none;
+  transform: scale(0.98);
+}
+
+/* Responsive improvements for mobile */
+@media screen and (max-width: 600px) {
+  .quiz-btn {
+    font-size: 1.3rem;
+    padding: 1.2em;
+  }
+}
+
+
+
+/*end answer buttons*/
 
 
 @media screen and (max-width: 600px) {
@@ -505,7 +554,7 @@ font-size:18px
 }
   
   
-}<!--end media screen-->
+}/*end media screen*/
   
 </style>
 
@@ -610,7 +659,7 @@ font-size:18px
   
   {
     question: "Where did they meet?",
-    answers: ["Through friends", "At work", "Match.com", "Fender Bender"],
+    answers: ["Through friends", "At work", "Match.com", "Renaissance Fair"],
     correct: 2
   },
   {
@@ -703,6 +752,7 @@ font-size:18px
 
   q.answers.forEach((answer, index) => {
     const btn = document.createElement("button");
+	btn.classList.add("quiz-btn");
     btn.textContent = answer;
     btn.classList.add("quiz-btn"); // Unique quiz class
     btn.onmousedown = e => e.preventDefault(); // Fix sticky mobile focus
