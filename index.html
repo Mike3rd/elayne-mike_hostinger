@@ -475,6 +475,35 @@ margin-bottom:15px;
 padding-bottom:15px
 }
 
+button {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:active,
+button:focus,
+button:hover {
+  background-color: var(--secondary);
+}
+
+/* Optionally remove hover effects entirely on mobile: */
+@media (hover: none) {
+  button:hover {
+    background-color: inherit !important;
+  }
+}
+
+
+
+
+
+
+
+
 @media screen and (max-width: 600px) {
 .subtitle-em {
 text-align:center;
@@ -490,7 +519,7 @@ font-size:18px
 
 <div class="quiz-wrapper">
 <h1>How Well do you Know the Couple?</h1>
-<p class="subtitle-em">13 questions. Some true, some fake. All entertaining.</p>
+<p class="subtitle-em">14 questions. Some true, some fake. All entertaining.</p>
         <a href="https://elayne-mike.com/post/fun-facts/" class="post-read-more">[Read More]</a>
         
     </div>

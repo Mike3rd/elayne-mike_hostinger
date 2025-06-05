@@ -63,7 +63,7 @@
     "name" : "Elayne and Mike"
   },
   "headline": "Bride \u0026 Groom Trivia Showdown",
-  "description" : " How Well do you Know the Couple? 13 questions. Some true, some fake. All entertaining.\n",
+  "description" : " How Well do you Know the Couple? 14 questions. Some true, some fake. All entertaining.\n",
   "inLanguage" : "en",
   "wordCount":  50 ,
   "datePublished" : "2025-06-01T16:41:33-04:00",
@@ -500,6 +500,35 @@ margin-bottom:15px;
 padding-bottom:15px
 }
 
+button {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:active,
+button:focus,
+button:hover {
+  background-color: var(--secondary);
+}
+
+/* Optionally remove hover effects entirely on mobile: */
+@media (hover: none) {
+  button:hover {
+    background-color: inherit !important;
+  }
+}
+
+
+
+
+
+
+
+
 @media screen and (max-width: 600px) {
 .subtitle-em {
 text-align:center;
@@ -515,7 +544,7 @@ font-size:18px
 
 <div class="quiz-wrapper">
 <h1>How Well do you Know the Couple?</h1>
-<p class="subtitle-em">13 questions. Some true, some fake. All entertaining.</p>
+<p class="subtitle-em">14 questions. Some true, some fake. All entertaining.</p>
 <p class="subtitle-em">Guess your way through our relationship rewind!</p>
 <p class="subtitle-em border-bottom"><i>Ties are ranked by completion time.</i></p>
 
@@ -577,69 +606,75 @@ font-size:18px
   const questions = [
   {
     question: "Where was their first date?",
-    answers: ["Barren Hill Tavern & Brewery", "Philadelphia Zoo", "Wegmans"],
+    answers: ["Barren Hill Tavern & Brewery", "Philadelphia Zoo", "Wegmans", "Cut Copy concert"],
     correct: 0
   },
   {
     question: "What’s their dog's favorite treat?",
-    answers: ["Postmen", "Lasagna", "Cheese"],
+    answers: ["Postmen", "Lasagna", "Cheese", "Twinkies"],
     correct: 2
   },
   {
     question: "What’s their go-to TV show?",
-    answers: ["C-SPAN 3", "Project Runway", "Alf"],
+    answers: ["C-SPAN 3", "Project Runway", "Alf", "House"],
     correct: 1
   },
   {
-    question: "Where were they stranded and quarantined for 6 days thanks to Covid?",
-    answers: ["Schwenksville", "Bermuda", "Galapagos Islands"],
+    question: "Where were they stranded and quarantined for 6 days, thanks to Covid?",
+    answers: ["Schwenksville", "Bermuda", "Galapagos Islands","Puerto Morelos"],
     correct: 2
   },
   {
-    question: "What was their first home purchase?",
-    answers: ["Tool Chest", "Curtains", "Lawn Mower"],
+    question: "What was the first item they purchased for the house?",
+    answers: ["Tool Chest", "Curtains", "Lawn Mower", "Grill"],
     correct: 0
   },
   {
     question: "What kind of music do they bond over most?",
-    answers: ["Jazz", "Yacht Rock", "Dolphin mating calls"],
+    answers: ["Jazz", "Yacht Rock", "Dolphin mating calls", "Oldies"],
     correct: 1
   },
   
    {
     question: "What's their dog's actual name?",
-    answers: ["Toby Z Longfellow", "Sir Sleeps All Day", "Bruiser"],
+    answers: ["Tobin Z. Longfellow", "Sir Sleeps A lot", "Bruiser", "Big Baby"],
     correct: 0
   },
   
   {
     question: "Where did they meet?",
-    answers: ["Through friends", "At work", "Match.com"],
+    answers: ["Through friends", "At work", "Match.com", "Fender Bender"],
     correct: 2
   },
   {
-    question: "Who lost their passport- which was later found after a full day spent getting a new one- in Ecuador?",
+    question: "Who lost their passport— which was later found after a full day spent getting a new one— in Ecuador?",
     answers: ["Mike", "Elayne", "Both are to blame, regardless of who's it was"],
     correct: 2
   },
   {
     question: "What is their favorite activity while on vacation?",
-    answers: ["Wandering markets", "Museums", "Snorkeling"],
+    answers: ["Wandering markets", "Museums", "Snorkeling", "Golf"],
     correct: 2
   },
   
     {
-      question: "What June 2025 race are they preparing for / did they compete in together?",
-	  answers: ["Color Run 5K", "Eagleman Ironman 70.3", "Mario Kart Grand Prix"],
+      question: "What June 2025 race did they train for in Winter/Spring of 2025?",
+	  answers: ["Color Run 5K", "Eagleman Ironman 70.3", "Mario Kart Grand Prix", "Escape the Cape"],
 	  correct: 1
   },
   {
     question: "What was the name of their first fish?",
-    answers: ["Gobie", "Toby II", "Sir Swim-a-lot"],
+    answers: ["Gobie", "Toby II", "Sir Swim-a-lot", "Charlie the Tuna"],
+    correct: 0
+  },
+  
+    {
+    question: "What do they eat for dinner on their Wednesday "date night"?",
+    answers: ["Burgers", "Pizza", "Gluten-free pancakes", "Pop-Tarts"],
     correct: 0
   },
   {
-    question: "How well do *you* know them?",
+    question: "How well do *you* know the bride and groom?",
     answers: ["I’m basically family", "I’ve been guessing wildly", "Wait—who are we talking about?"],
     correct: 2 
   }
@@ -692,28 +727,38 @@ font-size:18px
 }
 
   function showQuestion() {
-    const q = questions[currentQuestion];
-    document.getElementById("question").textContent = q.question;
+  const q = questions[currentQuestion];
+  const questionEl = document.getElementById("question");
+  const answerButtons = document.getElementById("answer-buttons");
 
-    const answerButtons = document.getElementById("answer-buttons");
-    answerButtons.innerHTML = "";
+  questionEl.textContent = q.question;
+  answerButtons.innerHTML = "";
 
-    q.answers.forEach((answer, index) => {
-      const btn = document.createElement("button");
-      btn.textContent = answer;
-      btn.onclick = () => {
-        userAnswers.push({
-		  question: q.question,
-		  answer,
-		  correctAnswer: q.answers[q.correct], // <--- this line fixes your display
-		  correct: index === q.correct
-		});
-        if (index === q.correct) score++;
-        nextQuestion();
-      };
-      answerButtons.appendChild(btn);
-    });
-  }
+  q.answers.forEach((answer, index) => {
+    const btn = document.createElement("button");
+    btn.textContent = answer;
+
+    // Prevent sticky focus on mobile
+    btn.onmousedown = (e) => e.preventDefault();
+
+    btn.onclick = () => {
+      // Blur all buttons to remove stuck hover/focus styles
+      [...answerButtons.children].forEach(b => b.blur());
+
+      userAnswers.push({
+        question: q.question,
+        answer,
+        correctAnswer: q.answers[q.correct],
+        correct: index === q.correct
+      });
+
+      if (index === q.correct) score++;
+      nextQuestion();
+    };
+
+    answerButtons.appendChild(btn);
+  });
+}
 
   function nextQuestion() {
     currentQuestion++;
