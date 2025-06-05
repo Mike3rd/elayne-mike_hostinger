@@ -717,18 +717,13 @@ font-size:18px
   q.answers.forEach((answer, index) => {
     const btn = document.createElement("button");
     btn.textContent = answer;
-
-    // Ensure styles are clean
-    btn.style.backgroundColor = '#f0f0f0';
-    btn.style.color = '#000';
-
-    btn.onmousedown = e => e.preventDefault(); // prevent sticky mobile focus
+    btn.classList.add("quiz-btn"); // Unique quiz class
+    btn.onmousedown = e => e.preventDefault(); // Fix sticky mobile focus
 
     btn.onclick = () => {
-      // Reset all buttons to default
+      // Clear visual focus for all buttons
       [...answerButtons.children].forEach(b => {
         b.blur();
-        b.style.backgroundColor = '#f0f0f0';
       });
 
       userAnswers.push({
