@@ -63,7 +63,7 @@
     "name" : "Elayne and Mike"
   },
   "headline": "Bride \u0026 Groom Trivia Showdown",
-  "description" : " How Well do you Know the Couple? 13 questions. Some true, some fake. All entertaining.\n",
+  "description" : " How Well do you Know the Couple? 14 questions. Some true, some fake. All entertaining.\n",
   "inLanguage" : "en",
   "wordCount":  50 ,
   "datePublished" : "2025-06-01T16:41:33-04:00",
@@ -504,19 +504,6 @@ padding-bottom:15px
 
 
 
-/* Focus and active state */
-button:focus,
-button:active {
-  outline: none;
-  background-color: var(--primary);
-}
-
-
-@media (hover: none) {
-  button:hover {
-    background-color: inherit !important;
-  }
-}
 
 
 
@@ -537,7 +524,7 @@ font-size:18px
 
 <div class="quiz-wrapper">
 <h1>How Well do you Know the Couple?</h1>
-<p class="subtitle-em">13 questions. Some true, some fake. All entertaining.</p>
+<p class="subtitle-em">14 questions. Some true, some fake. All entertaining.</p>
 <p class="subtitle-em">Guess your way through our relationship rewind!</p>
 <p class="subtitle-em border-bottom"><i>Ties are ranked by completion time.</i></p>
 
@@ -731,12 +718,18 @@ font-size:18px
     const btn = document.createElement("button");
     btn.textContent = answer;
 
-    // Prevent sticky focus on mobile
-    btn.onmousedown = (e) => e.preventDefault();
+    // Ensure styles are clean
+    btn.style.backgroundColor = '#f0f0f0';
+    btn.style.color = '#000';
+
+    btn.onmousedown = e => e.preventDefault(); // prevent sticky mobile focus
 
     btn.onclick = () => {
-      // Blur all buttons to remove stuck hover/focus styles
-      [...answerButtons.children].forEach(b => b.blur());
+      // Reset all buttons to default
+      [...answerButtons.children].forEach(b => {
+        b.blur();
+        b.style.backgroundColor = '#f0f0f0';
+      });
 
       userAnswers.push({
         question: q.question,
