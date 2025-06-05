@@ -475,7 +475,32 @@ margin-bottom:15px;
 padding-bottom:15px
 }
 
+.quiz-btn {
+  background-color: var(--secondary); /* Default button background */
+  color: #fff;
+  border: none;
+  padding: 0.75em 1.25em;
+  margin: 0.5em 0;
+  border-radius: 6px;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 400px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
 
+/* Hover effects only on devices that support it */
+@media (hover: hover) {
+  .quiz-btn:hover {
+    background-color: var(--primary);
+  }
+}
+
+.quiz-btn:focus,
+.quiz-btn:active {
+  background-color: var(--primary);
+  outline: none;
+}
 
 
 
