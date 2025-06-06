@@ -154,16 +154,96 @@ padding-bottom:15px
     font-size: 1.5rem;
     padding: 1.2em;
   }
+}/*end media do not delete*/
+
+/*END ANSWER BUTTONS*/
+
+/* START SCREEN FORM */
+
+/* Layout container */
+.start-screen-columns {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
+/* Inputs and button styling */
+.start-form input[type="text"] {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.start-form button.trivia-btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.5rem;
+  background-color: var(--secondary, #f4a261);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.start-form button.trivia-btn:hover {
+  background-color: #e76f51; /* Slightly darker */
+}
+
+.start-extra img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Desktop: Two columns, form on right */
+@media (min-width: 768px) {
+  .start-screen-columns {
+    flex-direction: row-reverse;
+    align-items: flex-start;
+  }
+
+  .start-form, .start-extra {
+    flex: 1;
+  }
+
+  .start-extra {
+    padding-right: 2rem;
+    border-right: 2px solid #ccc; /* optional divider */
+  }
+}
+
+@media screen and (max-width: 600px) {
+
+.start-extra {
+	/*display:none*/
+	
+}
+
+  
+  
+}/*end media do not delete*/
 
 
-/*end answer buttons*/
-
-
+/*END FORM*/
 
 
 /* RESULTS SUMMARY */
+
+@keyframes bounceFadeIn {
+  0% { transform: scale(0.5); opacity: 0; }
+  60% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+#resultsHeader {
+  animation: bounceFadeIn 0.8s ease;
+
+}
+
 
 #results {
   
@@ -173,12 +253,16 @@ padding-bottom:15px
 
 
 #results-header-wrap {
+	background:#D6F1F1!important;
+	background-image: url("/img/back3.svg")!important;
+	background-size: 400px 400px!important;
+	background-repeat: repeat;
 	
 
 padding:2rem 0;
 
 
-background-color: #f9f9f9;
+background-color: #D6F1F1;
   border-left: 4px solid var(--primary);
 
   margin-bottom: 1rem;
@@ -280,6 +364,11 @@ background-color: #f9f9f9;
 }
 
 /* END RESULTS SUMMARY */
+
+
+
+
+
 
 
 @media screen and (max-width: 600px) {

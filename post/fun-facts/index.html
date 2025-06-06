@@ -63,9 +63,9 @@
     "name" : "Elayne and Mike"
   },
   "headline": "Bride \u0026 Groom Trivia Showdown",
-  "description" : " How Well do you Know the Couple? 16 questions. Some true, some fake. All entertaining.\n",
+  "description" : " How Well do you Know the Couple? 15 questions. 100% true. 110% entertaining.\n",
   "inLanguage" : "en",
-  "wordCount":  47 ,
+  "wordCount":  32 ,
   "datePublished" : "2025-06-01T16:41:33-04:00",
   "dateModified" : "2025-06-01T16:41:33-04:00",
   "image" : "https:\/\/elayne-mike.com\/",
@@ -400,20 +400,34 @@ function includeHTML() {
         
 <span id="playerName" style="display: none;"></span>
 <div class="quiz-wrapper">
-<h1>How Well do you Know the Couple?</h1>
-<p class="subtitle-em">16 questions. Some true, some fake. All entertaining.</p>
+<h1 style="margin:0px">How Well do you Know the Couple?</h1>
+<p class="subtitle-em" style="margin:0px; font-size:23px; color:var(--primary)">15 questions. 100% true. 110% entertaining.</p>
 <p class="subtitle-em">Guess your way through our relationship rewind!</p>
 <p class="subtitle-em border-bottom"><i>Ties are ranked by completion time.</i></p>
 
 
   <div id="start-screen">
-    <label for="guestFirstName" class="guestname">First Name:</label><br>
-    <input type="text" id="guestFirstName" placeholder="First Name" /><br>
-	
-	<label for="guestLastName" class="guestname">Last Name:</label><br>
-	<input type="text" id="guestLastName" placeholder="Last name" /><br>
-    <button class="trivia-btn" onclick="startQuiz()">Start Quiz</button>
+  <div class="start-screen-columns">
+    <!-- Column 1: Form -->
+    <div class="start-form">
+      <label for="guestFirstName" class="guestname">First Name:</label><br>
+      <input type="text" id="guestFirstName" placeholder="First Name" /><br>
+
+      <label for="guestLastName" class="guestname">Last Name:</label><br>
+      <input type="text" id="guestLastName" placeholder="Last Name" /><br>
+
+      <button class="trivia-btn" onclick="startQuiz()">Start Quiz</button>
+    </div>
+
+    <!-- Column 2: Optional text/image -->
+    <div class="start-extra">
+      <!-- <p>Think you know us well?</p>
+      <p>Prove it! 😉</p> -->
+      <!-- Or an image -->
+      <img src="../../img/train_oil_300.webp"" alt="Train Ride" style="max-width: 100%;">
+    </div>
   </div>
+</div>
 
   <div id="quiz-container" style="display: none;">
     <div id="question-container">
@@ -482,9 +496,9 @@ function includeHTML() {
   },
   
   {
-    question: "What’s their dog's favorite song? ",
-    answers: ["C-SPAN 3", "Project Runway", "Alf", "House"],
-    correct: 1
+    question: "Who is more likely to sign up for a race? ",
+    answers: ["Elayne", "Mike", "Their dog, if it comes with a post-race nap",],
+    correct: 0
   },
   {
     question: "Where were they stranded and quarantined for 6 days, thanks to Covid?",
@@ -504,7 +518,7 @@ function includeHTML() {
   
    {
     question: "What's their dog's actual name?",
-    answers: ["Tobin Z. Longfellow", "Sir Sleeps A lot", "Bruiser", "Big Baby"],
+    answers: ["Tobin Z. Longfellow", "Sir Sleeps A. Lot", "Sharkbite", "Tucker"],
     correct: 0
   },
   
@@ -518,16 +532,7 @@ function includeHTML() {
     answers: ["Mike", "Elayne", 'Both were to blame, regardless of whose passport was "lost".'],
     correct: 2
   },
-   {
-    question: "What did Mike say when Elayne suggested a second dog?",
-    answers: [
-      '“That’s a hard maybe.”',
-      '"Only if it does dishes."',
-      "No memory of this conversation",
-	  '"Only if it does dishes."'
-    ],
-    correct: 0
-	},
+
   {
     question: "What is their favorite activity while on vacation?",
     answers: ["Wandering markets", "Museums", "Snorkeling", "Golf"],
@@ -540,9 +545,9 @@ function includeHTML() {
 	  correct: 1
   },
   {
-    question: "What was the name of their first fish?",
-    answers: ["Gopi", "Toby II", "Sir Swims-a-lot", "Charlie the Tuna"],
-    correct: 0
+    question: "Which of the following clown fish antics riles up Elayne the most?",
+    answers: ["The female hogs all the food", "They lay eggs only to eat them a week later", "They pick up then throw hermit crab shells against the glass", "All of the above"],
+    correct: 3
   },
   
     {
@@ -671,7 +676,7 @@ nameEl.dataset.last = lastName;
   if (percentage >= 75) {
   header.innerHTML = `🎉<br>Well Done!,<br>${fullName}!`;
 } else {
-  header.innerHTML = `👋 <br>Good Effort,<br>${fullName}!`;
+  header.innerHTML = `👋<br>Good Effort,<br><span style="color:var(--secondary)">${fullName}!</span>`;
 }
 
   
@@ -681,7 +686,7 @@ document.getElementById("score").textContent = `${score}/${questions.length} (${
   const scaleEl = document.getElementById("result-scale");
   const starCount = percentage === 100 ? 4 : percentage >= 75 ? 3 : percentage >= 50 ? 2 : 1;
   const stars = "⭐".repeat(starCount);
-  scaleEl.innerHTML = `<strong>Your Star Rating:<br></strong> ${stars}`;
+  scaleEl.innerHTML = `<strong>Your Star Rating:<br></strong>${stars}`;
 
   const list = document.getElementById("summary-list");
   list.innerHTML = "";
