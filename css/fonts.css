@@ -64,6 +64,34 @@
 
 
 
+/* tangerine
+================================================================================ */
+
+@font-face {
+    font-family: 'tangerinebold';
+    src: url('../fonts/tangerine/tangerine-bold-webfont.woff2') format('woff2'),
+         url('../fonts/tangerine/tangerine-bold-webfont.woff') format('woff'),
+         url('../fonts/tangerine/tangerine-bold-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+	font-display: swap;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'tangerineregular';
+    src: url('../fonts/tangerine/tangerine-regular-webfont.woff2') format('woff2'),
+         url('../fonts/tangerine/tangerine-regular-webfont.woff') format('woff'),
+         url('../fonts/tangerine/tangerine-regular-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+	font-display: swap;
+
+}
+
 
 
 

@@ -1,0 +1,346 @@
+/* RSVP Specific Styles - Unique class names */
+:root {
+  --primary: hsla(174, 44%, 29%, 1);
+  --secondary: hsla(349, 100%, 78%, 1);
+  --base-bg: hsla(120, 8%, 97%, 1);
+  --headfoot-bg: hsla(0, 0%, 100%, 1);
+  --text: hsla(0, 0%, 20%, 1);
+  --heather-gray: hsla(201, 19%, 76%, 1);
+}
+
+.rsvp-container {
+
+    width: 100%; /* Full width by default */
+    padding: 0;
+	padding-bottom:15px;
+    margin: 0 auto; /* Centered on desktop */
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    font-family: sans-serif;
+    color: var(--text);
+    box-sizing: border-box; /* Include padding in width calculation */
+			
+	background-image: url("/img/paper_back.png")!important;
+	background-size: 100px 100px!important;
+	background-repeat: repeat;
+
+}
+
+
+
+#rsvp-intro-image{
+	background-image: url("/img/rsvp_web_greens.png");
+
+width:100%;
+border-radius:10px;
+height:155px;
+	
+}
+
+.rsvp-title{
+    color: var(--primary);
+    text-align: center;
+    margin-bottom: 20px;
+font-family: var(--rsvp-font-family-regular);
+font-size: 85px;
+line-height:95%
+}
+
+.rsvp-attendees-section h2{
+
+
+	font-family: lora;
+}
+
+#rsvp-intro {
+font-family: var(--rsvp-font-family-bold);	
+padding:0 25px;
+font-size: 35px;
+line-height:35px;
+text-align:center;
+	
+}
+
+
+.rsvp-form {
+    background-color: var(--headfoot-bg);
+    padding: 20px;
+    border-radius: 8px;
+    margin: 15px;
+}
+
+.rsvp-form h1 {
+    	font-family: lora;
+		text-align:center;
+		margin-top:15px
+}
+
+.rsvp-form-group {
+    margin-bottom: 15px;
+}
+
+.rsvp-label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 400;
+    color: var(--primary);
+}
+
+.rsvp-input, .rsvp-select {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid var(--heather-gray);
+    border-radius: 4px;
+    font-size: 16px;
+	box-sizing: border-box;
+	height: 44px;
+}
+
+.name-text-field input[type="text"] {
+    width: 100%!important;
+	max-width: 800px
+
+}
+
+
+
+.rsvp-input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(48, 73, 4, 0.2); /* Using your primary color */
+}
+
+
+.rsvp-radio-group {
+    display: flex;
+    gap: 15px;
+	margin-top: 8px;
+
+}
+
+.rsvp-radio-label {
+   /* display: flex;*/
+    align-items: center;
+    gap: 5px;
+	font-weight:400
+}
+
+.rsvp-submit {
+    background-color: var(--secondary);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.rsvp-submit:hover {
+    background-color: hsla(349, 100%, 68%, 1);
+}
+
+.rsvp-attendees-section {
+    background-color: var(--headfoot-bg);
+    padding: 5px 15px;
+    border-radius: 8px;
+	margin:15px
+}
+
+.rsvp-subtitle {
+    color: var(--primary);
+    margin-bottom: 15px;
+
+}
+
+.rsvp-attendees-list {
+    margin-bottom: 20px;
+}
+
+.rsvp-attendee-item {
+    padding: 10px;
+    border-bottom: 1px solid var(--heather-gray);
+    display: flex;
+    justify-content: space-between;
+}
+
+.rsvp-guest-names-container {
+    margin-top: 10px;
+}
+
+.rsvp-guest-name-input {
+    margin-top: 5px;
+}
+
+.rsvp-totals {
+    font-weight: 400;
+    color: var(--primary);
+}
+
+.rsvp-totals p{
+    margin:0px
+}
+
+.rsvp-thank-you {
+    background-color: var(--secondary-bg);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 20px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.rsvp-thank-you h3 {
+    color: var(--primary);
+    margin-bottom: 15px;
+	font-family: lora, serif;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Toggle button styles - SIMPLIFIED */
+.rsvp-toggle-btn {
+    background: none;
+    border: none;
+    color: var(--primary);
+    font-size: 1.2em;
+    cursor: pointer;
+    padding: 0 0px;
+    margin-left: 10px;
+    position: relative;
+}
+
+.rsvp-toggle-btn {
+    transition: transform 0.2s ease;
+}
+
+.rsvp-toggle-btn.expanded {
+    transform: rotate(90deg);
+}
+
+.rsvp-toggle-btn.new-data-available::after {
+  content: "";
+  position: absolute;
+  top: 2px;  /* Moved higher */
+  right: 2px; /* Moved left */
+  width: 6px; /* Smaller */
+  height: 6px; /* Smaller */
+  background-color: #ff0000; /* Bright red */
+  border-radius: 50%;
+  border: 1px solid white; /* Optional: adds contrast */
+}
+/*--------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+/* Attendees list styles (keep these) */
+.rsvp-attendees-list {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding: 0 10px;
+}
+
+.rsvp-attendees-list.expanded {
+    max-height: 1000px;
+    padding: 10px;
+	 display: block !important; /* Force show */
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Keep your new data indicator styles */
+.new-data-available {
+    position: relative;
+    color: var(--secondary);
+}
+
+.new-data-available::after {
+    content: "•";
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: var(--secondary);
+    font-size: 1.5em;
+}
+
+
+/* Attendee item styling */
+.rsvp-attendee-item {
+    padding: 10px;
+    border-bottom: 1px solid var(--heather-gray);
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+
+/* Mobile-specific styles */
+@media only screen and (max-width: 768px) {
+
+    /* Optional: Make form elements larger for touch */
+    .rsvp-input, .rsvp-select {
+        font-size: 18px; /* Larger text for mobile */
+        padding: 12px 15px; /* Larger touch targets */
+    }
+    
+     .rsvp-container {
+        max-width: 100%;
+        min-height: 100vh;
+        border-radius: 0;
+        padding-top: 0px;
+        margin: 0;
+        
+
+    }
+    
+    .rsvp-title {
+        font-size: 55px;
+        margin-bottom: 0px;
+    }
+	
+	#rsvp-intro{
+		font-size:30px;		
+	}
+    
+    .rsvp-form {
+        padding: 15px;
+    }
+    
+    .rsvp-input, .rsvp-select {
+        font-size: 16px;
+        padding: 12px 15px;
+    }
+    
+    .rsvp-radio-group {
+        flex-direction: column;
+        gap: 10px;
+
+    }
+    
+    .rsvp-submit {
+        padding: 14px;
+        font-size: 18px;
+    }
+	
+	.rsvp-subtitle {
+    text-align: center
+
+}
+	
+	
+	
+    }
+}
+

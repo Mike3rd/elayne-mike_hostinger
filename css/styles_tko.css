@@ -59,6 +59,8 @@
 	/*--theme-title-family:"Barriecito", system-ui;*/
 	--theme-second-family:'emilys_candyregular',serif;
 	--theme-title-family:'emilys_candyregular', system-ui;
+	--rsvp-font-family-bold:'tangerinebold', serif;
+	--rsvp-font-family-regular:'tangerineregular', serif;
 } 
  
 :root[data-theme="default"]{
@@ -161,6 +163,25 @@ body{
 	
 }*/
 
+.well h1 {
+font-family: var(--theme-second-family);
+font-size: 50px;		
+}
+
+.well a{
+color: var(--color-gray-10)
+}
+
+
+.well img  {
+	
+border-radius: 10px;
+}
+
+	.em_heart{
+	width:50px; display: inline; padding-bottom:0px
+}
+
 .post-heading{
 text-align:center
 	
@@ -253,24 +274,7 @@ border-color: var(--secondary)
 	border: none!important		
 }
 
-.well h1 {
-font-family: var(--theme-second-family);
-font-size: 50px;		
-}
 
-.well a{
-color: var(--color-gray-10)
-}
-
-
-.well img  {
-	
-border-radius: 10px;
-}
-
-	.em_heart{
-	width:50px; display: inline; padding-bottom:0px
-}
 
 .post-preview, .blog-post{
 background-image: linear-gradient(to bottom right, #D6F1F1, #ffffff);
