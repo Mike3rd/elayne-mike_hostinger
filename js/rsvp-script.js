@@ -7,9 +7,61 @@ document.addEventListener('DOMContentLoaded', function() {
     const attendeesList = document.getElementById('rsvp-attendees-list');
     const totalCountSpan = document.getElementById('rsvp-total-count');
     const totalGuestsSpan = document.getElementById('rsvp-total-guests');
-	const toggleButton = document.getElementById('toggle-attendees');
+    const toggleButton = document.getElementById('toggle-attendees');
+    const codeVerification = document.getElementById('code-verification');
+    const verifyBtn = document.getElementById('verify-code');
+    const codeInput = document.getElementById('rsvp-code');
+    const guestContainer = document.getElementById('rsvp-guests-container');
+    
+    // Invitation Codes
+    const CODES = {
+        SOLO: "WED2025-SOLO",    // 1 guest only
+        COUPLE: "WED2025-COUPLE", // 2 guests max
+        FAMILY: "WED2025-FAMILY"  // 4 guests max
+    };
 
-	
+  // Initialize form states
+    rsvpForm.style.display = 'none'; // Hide RSVP form initially
+    codeVerification.style.display = 'block'; // Show code entry
+
+    // Verify Code Button Click
+    verifyBtn.addEventListener('click', function() {
+        const code = codeInput.value.trim().toUpperCase();
+        
+        if (!Object.values(CODES).includes(code)) {
+            alert("Invalid code. Please check your invitation.");
+            return;
+        }
+
+        // Hide code verification, show RSVP form
+        codeVerification.style.display = 'none';
+        rsvpForm.style.display = 'block';
+        
+        // Configure form based on code
+        if (code === CODES.SOLO) {
+            // Hide guest selection for solo
+            guestContainer.style.display = 'none';
+            // Ensure guest count is set to 1
+            guestCountSelect.value = "1";
+        } else {
+            // Show appropriate guest options
+            guestContainer.style.display = 'block';
+            const maxGuests = code === CODES.COUPLE ? 2 : 4;
+            updateGuestOptions(maxGuests);
+        }
+    });
+
+    // Helper function to update guest options
+    function updateGuestOptions(maxGuests) {
+        guestCountSelect.innerHTML = '';
+        for (let i = 1; i <= maxGuests; i++) {
+            const option = document.createElement('option');
+            option.value = i;
+            option.textContent = i + (i === 1 ? " (Just yourself)" : "");
+            guestCountSelect.appendChild(option);
+        }
+        updateGuestNameFields(1); // Initialize with 1 guest
+    }
 	
 	
 	// Initialize as collapsed with right arrow
@@ -34,47 +86,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 	
-// check captcha
- document.addEventListener('DOMContentLoaded', function () {
-    try {
-      // Initialize Firebase
-      firebase.initializeApp({
-        apiKey: "6LfwImgrAAAAANOHxw6Q_-KM5obFh1YB2Pq5b7nA",
-        authDomain: "thematic-runner-459319-g4.firebaseapp.com",
-        projectId: "thematic-runner-459319-g4",
-        // ...other config
-      });
-
-      // ✅ Activate App Check with reCAPTCHA v3
-      const appCheck = firebase.appCheck().activate(
-        "6LfwImgrAAAAANOHxw6Q_-KM5obFh1YB2Pq5b7nA", // Site key from Google reCAPTCHA
-        true // auto-refresh App Check token
-      );
-
-      // Optional: add observer for token errors
-      firebase.appCheck().onTokenChanged((token) => {
-        console.log("App Check token received:", token);
-      }, (error) => {
-        console.error("⚠️ App Check token error:", error);
-        // Optional: fallback message for user
-        alert("Warning: Could not verify this browser. Submissions may fail.");
-      });
-
-    } catch (e) {
-      console.error("⚠️ Firebase/App Check failed to initialize:", e);
-      alert("Something went wrong initializing security checks. Please try refreshing the page or contact us.");
-    }
-  });
-
-
-
 
     
     // Initialize Firebase if not already initialized
 	
-	
-
-        firebase.initializeApp({
+ firebase.initializeApp({
              apiKey: "AIzaSyB5YUtuhtJh7bezkD8E6gpn0Rs1jzJCS7w",
 			  authDomain: "thematic-runner-459319-g4.firebaseapp.com",
 			  projectId: "thematic-runner-459319-g4",
@@ -109,38 +125,57 @@ document.addEventListener('DOMContentLoaded', function() {
     rsvpForm.addEventListener('submit', async function(e) {
         e.preventDefault();
         
+        const code = codeInput.value.trim().toUpperCase();
+        const isSolo = code === CODES.SOLO;
+        const guestCount = isSolo ? 1 : parseInt(guestCountSelect.value);
+        
+        // Validate code and guest count
+        if (!Object.values(CODES).includes(code)) {
+            alert("Please enter a valid reservation code");
+            return;
+        }
+        
+        // Validate guest count matches code type
+        if ((code === CODES.SOLO && guestCount !== 1) ||
+            (code === CODES.COUPLE && guestCount > 2) ||
+            (code === CODES.FAMILY && guestCount > 4)) {
+            alert("Guest count doesn't match invitation type");
+            return;
+        }
+
         const submitBtn = e.target.querySelector('button[type="submit"]');
         submitBtn.disabled = true;
         submitBtn.textContent = 'Submitting...';
         
         try {
             const name = document.getElementById('rsvp-name').value.trim();
-			const email = document.getElementById('rsvp-email').value.trim();
+            const email = document.getElementById('rsvp-email').value.trim();
             const attending = document.querySelector('input[name="rsvp-attending"]:checked').value === 'yes';
-            const guestCount = parseInt(guestCountSelect.value);
             
             // Collect guest names
             const guests = [];
             if (attending) {
                 guests.push(name); // Primary guest
                 
-                // Collect additional guest names
-                for (let i = 1; i < guestCount; i++) {
-                    const guestNameInput = document.getElementById(`rsvp-guest-${i}`);
-                    if (guestNameInput && guestNameInput.value.trim()) {
-                        guests.push(guestNameInput.value.trim());
+                // Collect additional guest names if not solo
+                if (!isSolo) {
+                    for (let i = 1; i < guestCount; i++) {
+                        const guestNameInput = document.getElementById(`rsvp-guest-${i}`);
+                        if (guestNameInput && guestNameInput.value.trim()) {
+                            guests.push(guestNameInput.value.trim());
+                        }
                     }
                 }
             }
-			
 
-            // Save to Firestore
+            // Save to Firestore with code information
             await guestsRef.add({
                 name: name,
                 email: email,
                 attending: attending,
                 guests: guests,
-				totalAttendees: guestCount,
+                totalAttendees: guestCount,
+                invitationCode: code,
                 timestamp: firebase.firestore.FieldValue.serverTimestamp()
             });
             
@@ -175,7 +210,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 rsvpForm.style.display = 'block';
             }, 5000);
             
-        } catch (error) {
+         } catch (error) {
             console.error("Submission error:", error);
             alert("Error submitting RSVP. Please try again.");
         } finally {
