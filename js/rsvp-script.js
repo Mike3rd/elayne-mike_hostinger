@@ -167,6 +167,16 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 }
             }
+					
+console.log("Submitting RSVP with:", {
+  name,
+  email,
+  attending,
+  guests,
+  totalAttendees: guestCount,
+  invitationCode: code,
+});
+	
 
             // Save to Firestore with code information
             await guestsRef.add({
