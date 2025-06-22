@@ -41,7 +41,7 @@ height:155px;
 .rsvp-title{
     color: var(--primary);
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
 font-family: var(--rsvp-font-family-regular);
 font-size: 85px;
 line-height:95%
@@ -61,9 +61,12 @@ color: #374a3c
 }
 
 #rsvp-intro p{
-
 line-height:37px;
+}
 
+.border-bottom{
+border-bottom: solid 1px #374a3c;
+padding-bottom:15px	
 	
 }
 
