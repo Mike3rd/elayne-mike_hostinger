@@ -278,7 +278,7 @@ border-color: var(--secondary)
 
 .post-preview, .blog-post{
 background-image: linear-gradient(to bottom right, #D6F1F1, #ffffff);
-padding:25px;
+padding:20px;
 margin-bottom:10px;
 border-radius: 15px	
 }
@@ -429,7 +429,7 @@ footer a{
 .blog-tags a {color:var(--links)}
  
 .page-heading {color:var(--primary);}
-.page-subheading {color:var(--page-subheading)
+.page-subheading {color:var(--page-subheading}
 
 
 /* blog post page*/

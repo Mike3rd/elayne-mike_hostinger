@@ -244,7 +244,7 @@ text-align:center;
 
 .rsvp-hint {
     display: block;
-    font-size: 0.8rem;
+    /*font-size: 1.08rem;*/
     color: #666;
     margin-top: 0.25rem;
 }
@@ -450,7 +450,7 @@ text-align:center;
      .rsvp-container {
         max-width: 100%;
         min-height: 100vh;
-        border-radius: 0;
+        border-radius: 15px;
         padding-top: 0px;
         margin: 0;
         
