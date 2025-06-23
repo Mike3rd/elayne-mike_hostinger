@@ -200,25 +200,24 @@ console.log("Submitting RSVP with:", {
             
             // Show thank you message
             const thankYouMessage = document.createElement('div');
-            thankYouMessage.className = 'rsvp-thank-you';
-            thankYouMessage.innerHTML = `
-                <h3>Thank You!</h3>
-                <p>Your RSVP has been submitted successfully.</p>
-            `;
-            
-            // Clear form and show message
-            rsvpForm.reset();
-            rsvpForm.style.display = 'none';
-            rsvpForm.parentNode.insertBefore(thankYouMessage, rsvpForm.nextSibling);
-            
-            // Reset form fields
-            updateGuestNameFields(1);
-            
-            // Hide message and show form again after 5 seconds
-            setTimeout(() => {
-                thankYouMessage.remove();
-                rsvpForm.style.display = 'block';
-            }, 5000);
+thankYouMessage.className = 'rsvp-thank-you';
+thankYouMessage.innerHTML = `
+    <h3>Thank You!</h3>
+    <p>Your RSVP has been submitted successfully.</p>
+`;
+
+// Clear form and show message
+rsvpForm.reset();
+const formContainer = rsvpForm.parentNode;
+formContainer.replaceChild(thankYouMessage, rsvpForm);
+
+// Reset form fields
+updateGuestNameFields(1);
+
+// Hide message after 5 seconds (form is already gone)
+setTimeout(() => {
+    thankYouMessage.remove();
+}, 5000);
             
          } catch (error) {
             console.error("Submission error:", error);
