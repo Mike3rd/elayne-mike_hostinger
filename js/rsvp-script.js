@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const verifyBtn = document.getElementById('verify-code');
     const codeInput = document.getElementById('rsvp-code');
     const guestContainer = document.getElementById('rsvp-guests-container');
+		
     
     // Invitation Codes
     const CODES = {
@@ -23,6 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Initialize form states
     rsvpForm.style.display = 'none'; // Hide RSVP form initially
     codeVerification.style.display = 'block'; // Show code entry
+	
 
     // Verify Code Button Click
     verifyBtn.addEventListener('click', function() {
@@ -100,10 +102,6 @@ document.addEventListener('DOMContentLoaded', function() {
 			  measurementId: "G-QF69FE73JG"
         });
 
-	firebase.appCheck().activate(
-  '6LfwImgrAAAAANOHxw6Q_-KM5obFh1YB2Pq5b7nA', // Site key from Google reCAPTCHA admin
-  true // Set to true to auto-refresh App Check token
-);
 	
 	
     
@@ -200,24 +198,25 @@ console.log("Submitting RSVP with:", {
             
             // Show thank you message
             const thankYouMessage = document.createElement('div');
-thankYouMessage.className = 'rsvp-thank-you';
-thankYouMessage.innerHTML = `
-    <h3>Thank You!</h3>
-    <p>Your RSVP has been submitted successfully.</p>
-`;
+				thankYouMessage.className = 'rsvp-thank-you';
+				thankYouMessage.innerHTML = `
+					<h3>Thank You!</h3>
+					<p>Your RSVP has been submitted successfully.<br>If you need to cancel or update your RSVP, please contact us</p>
+				`;
 
-// Clear form and show message
-rsvpForm.reset();
-const formContainer = rsvpForm.parentNode;
-formContainer.replaceChild(thankYouMessage, rsvpForm);
+				// Clear form and show message
+				rsvpForm.reset();
+				const formContainer = rsvpForm.parentNode;
+				formContainer.replaceChild(thankYouMessage, rsvpForm);
 
-// Reset form fields
-updateGuestNameFields(1);
-
-// Hide message after 5 seconds (form is already gone)
-setTimeout(() => {
-    thankYouMessage.remove();
-}, 5000);
+				// Reset form fields
+				updateGuestNameFields(1);
+				
+				
+				/*Hide message after 5 seconds (form is already gone)
+				setTimeout(() => {
+					thankYouMessage.remove();
+				}, 5000);*/
             
          } catch (error) {
             console.error("Submission error:", error);
