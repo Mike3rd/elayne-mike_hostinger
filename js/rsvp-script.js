@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Invitation Codes
     const CODES = {
-        SOLO: "WED2025-SOLO",    // 1 guest only
+        SOLO: "WED2025",    // 1 guest only
         COUPLE: "WED2025-COUPLE", // 2 guests max
         FAMILY: "WED2025-FAMILY"  // 4 guests max
     };
