@@ -6,6 +6,7 @@
   --headfoot-bg: hsla(0, 0%, 100%, 1);
   --text: hsla(0, 0%, 20%, 1);
   --heather-gray: hsla(201, 19%, 76%, 1);
+  --secondary-screen: hsla(349, 100%, 78%, .05);
 }
 
 .rsvp-container {
@@ -168,12 +169,7 @@ padding-bottom:15px
     margin-bottom: 20px;
 }
 
-.rsvp-attendee-item {
-    padding: 10px;
-    border-bottom: 1px solid var(--heather-gray);
-    display: flex;
-    justify-content: space-between;
-}
+
 
 .rsvp-guest-names-container {
     margin-top: 10px;
@@ -370,6 +366,10 @@ padding-bottom:15px
   border-bottom: 1px solid #f8f8f8;
 }
 
+.rsvp-attendee-item:nth-child(even) {
+   background: var(--secondary-screen);
+}
+
 .rsvp-attendee-item:hover {
   background: #fafafa;
 }
@@ -502,9 +502,13 @@ padding: 0 15px;
     text-align: center
 
 }
+.rsvp-attendee-item {
 	
+	font-size:17px
 	
-	
-    }
 }
+	
+	
+    }/*end of media querry*/
+
 
